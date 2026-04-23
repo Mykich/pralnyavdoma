@@ -1,0 +1,8 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M45 65L75 40L105 65" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M55 58V88H95V58" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 55C67 68 63 78 63 88C63 98 68.5 103 75 103C81.5 103 87 98 87 88C87 78 83 68 75 55Z" stroke="white" stroke-width="4" fill="none"/>
+  <path d="M81 90C81 93 79.5 95 78 95" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="75" y="130" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="1">PRALNYA VDOMA</text>
+</svg>

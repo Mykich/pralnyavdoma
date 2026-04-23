@@ -1,0 +1,656 @@
+/* BASIC START*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #102746;
+    background-color: #fff;
+    overflow-x: hidden; /* Щоб нічого не їхало вбік */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.wrapper__full {
+    max-width: 1262px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section__title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+}
+/* BASIC END*/
+
+/* HEADER START*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: 0.3s background;
+    box-sizing: border-box; /* Гарантує вірну ширину з padding */
+}
+
+.header_activ {
+    background: #102746;
+    padding: 10px 0;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1262px; 
+    margin: 0 auto;    
+    padding: 0 15px;   
+    width: 100%;
+}
+
+/* Прибираємо можливі зміщення логотипа */
+.header__logo {
+    display: flex;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 85px;
+}
+
+.header__link {
+    font-size: 18px;
+    color: #fff;
+    line-height: 24px;
+    text-decoration: none;
+    transition: opacity .2s linear;
+}
+
+.header__link:hover { opacity: .75; }
+/* HEADER END*/
+
+
+/* INTRO START */
+.intro {
+    min-height: 100vh;
+    background: url(../img/jpg/intro.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.intro__title {
+    max-width: 900px;      /* Збільшуємо максимальну ширину, щоб влізло все речення */
+    width: 100%;           /* Дозволяємо розтягуватися */
+    white-space: nowrap;   /* КРИТИЧНО: забороняє тексту переноситися на новий рядок */
+    font-size: 50px;       /* Якщо все одно не влазить, спробуй зменшити до 45px */
+    line-height: 60px;
+    margin-bottom: 22px;
+}
+
+.intro__text {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px;
+    margin-bottom: 60px;
+}
+
+.search__btn {
+    padding: 15px 40px;
+    background: #1B7DFF;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.search__btn:hover {
+    background: #0056b3;
+}
+/* INTRO END */
+
+
+/* BENEFITS START */
+.benefits {
+    margin-bottom: 131px;
+    position: relative;
+    background-color: transparent;
+    scroll-margin-top: 150px;
+}
+
+/* Біла плашка, яка наїжджає на картинку */
+.benefits__wrapper {
+    max-width: 1262px;
+    background-color: #ffffff !important;
+    margin: 0 auto;
+    box-shadow: 0px 10px 30px rgba(21, 24, 36, 0.15);
+    position: relative;
+    top: -100px; /* Поставив -50px, щоб не перекривати кнопку */
+    z-index: 20;
+    padding: 60px 100px;
+    display: block;
+}
+
+/* Заголовок "Наші Послуги" */
+.benefits__title {
+    font-size: 35px;
+    font-weight: 500;
+    color: #102746;
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* Контейнер для карток */
+.benefits__cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    gap: 30px;
+}
+
+/* Сама картка */
+.benefits__card {
+    display: flex;
+    flex-direction: column; 
+    flex: 1 1 0;
+}
+
+.benefits__card-image {
+    margin-bottom: 37px;
+    max-width: 66px;
+    display: block;
+}
+
+.benefits__card-title {
+    color: #102746;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 26px;
+}
+
+/* Опис - саме він вирівнює кнопки */
+.benefits__card-text {
+    color: #102746;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 39px;
+    flex-grow: 1; 
+}
+
+/* КНОПКА ЗІ СТРІЛКОЮ */
+.benefits__card-search {
+    color: #006DFE;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-flex; /* Важливо для центрування */
+    align-items: center;    /* Центрує текст і стрілку по вертикалі */
+    text-transform: uppercase;
+    margin-top: auto; 
+    line-height: 1;        /* Щоб висота рядка не збивала центр */
+}
+
+.benefits__card-search::after {
+    content: '';
+    display: inline-block;
+    width: 33px;
+    height: 8px;
+    background: url(../img/svg/arow.svg) no-repeat center;
+    background-size: contain;
+    margin-left: 15px;
+    transition: 0.2s ease-in-out;
+    
+    /* ВИПРАВЛЕНО: прибрали margin-bottom, який тягнув стрілку вниз */
+    margin-bottom: 0; 
+}
+
+.benefits__card-search:hover::after {
+    transform: translateX(10px);
+}
+
+/* BENEFITS END */
+
+/* PLACES START */
+.places { margin-bottom: 131px; }
+
+.places__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* ПРАВКА: Додали position: relative та зняли конфлікт з розтягуванням */
+.places__view { 
+    position: relative; /* Щоб кнопка не розтягувалася на весь блок */
+    z-index: 5;         /* Щоб була поверх усіх шарів */
+    color: #1B7DFF; 
+    text-decoration: none; 
+    transition: opacity 0.3s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.places__view:hover { opacity: 0.7; }
+
+/* ПРАВКА: Корекція стрілочки */
+.places__view::after {
+    content: '';
+    display: inline-block;
+    width: 33px;
+    height: 8px;
+    background: url(../img/svg/arow.svg) no-repeat center; /* Перевір назву файлу arow.svg або arrow.svg */
+    margin-left: 20px;
+}
+
+.places__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 10px;
+}
+
+.places__card { 
+    position: relative; 
+    overflow: hidden; 
+    height: 354px; 
+}
+
+.places__card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(21, 24, 36, 0.4); 
+    z-index: 2;
+    transition: background 0.3s; 
+}
+
+.places__card:hover::after {
+    background: rgba(21, 24, 36, 0.6);
+}
+
+.places__card:hover .places__card-pic { 
+    transform: scale(1.05); 
+}
+
+.places__card-pic {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: 0.4s ease-in-out;
+}
+
+.places__card-title {
+    color: white;
+    position: absolute;
+    bottom: 27px; left: 29px;
+    font-weight: 700;
+    font-size: 40px;
+    z-index: 3;
+    pointer-events: none; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+}
+
+/* Цей клас тепер використовується ТІЛЬКИ для карток */
+.places__card-link { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    z-index: 4; 
+}
+
+/* Розтяжка карток */
+.places__card-top { grid-column: span 3; }
+.places__card-buttom { grid-column: span 6; }
+
+/* PLACES END */
+
+/*GUIDS START*/
+.guids {
+    margin-bottom: 139px;
+}
+
+.guide__goide {
+    display: grid;
+    /* Використовуємо 1fr 1fr, щоб колонки завжди були рівними і не наповзали одна на одну */
+    grid-template-columns: 1fr 1fr; 
+    gap: 108px;
+    align-items: center;
+    margin-bottom: 120px; /* Збільшив відступ між блоками IPSO та Ательє */
+}
+
+.guide__pic img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Гарантуємо, що картинка не вийде за межі своєї колонки */
+    object-fit: contain; 
+}
+
+.guide__title {
+    color: #102746;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.guide__text {
+    color: #102746;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+/* Стилі для списку в Ательє (Bespoke, Down Care і т.д.) */
+.guide__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.guide__features li {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: #102746;
+}
+
+/* ФІКС КНОПКИ: Змінив назву з .guide__link на .guide__view, як у тебе в HTML */
+.guide__view {
+    font-size: 16px;
+    color: #1B7DFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center; /* СТРІЛКА ПО ЦЕНТРУ ТЕКСТУ */
+    font-weight: 500;
+    transition: .2s linear;
+}
+
+.guide__view::after {
+    content: '';
+    display: inline-block;
+    width: 33px;
+    height: 8px;
+    /* Перевір назву файлу: було arow.svg, можливо треба arrow.svg? */
+    background: url('../img/svg/arow.svg') no-repeat center;
+    background-size: contain;
+    margin-left: 15px;
+    transition: transform 0.2s linear;
+}
+
+.guide__view:hover::after {
+    transform: translateX(10px);
+}
+
+.guide__view:hover {
+    opacity: 0.8;
+}
+
+/*GUIDS END*/
+
+/* PRICES START */
+.prices {
+    margin-bottom: 120px; /* Великий відступ від карти для чистоти дизайну */
+    padding: 100px 0 60px 0;
+    background: #F4F5F7;
+}
+
+#prices {
+    scroll-margin-top: 100px; /* Відступ при скролі через фіксовану шапку */
+}
+
+.prices__title {
+    font-weight: 900;
+    font-size: 35px;
+    margin-bottom: 60px;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #102746;
+}
+
+/* КОНТЕЙНЕР ДЛЯ КАРТОК — ТУТ МИ ЗВУЗИЛИ БЛОКИ */
+.prices__cards {
+    display: flex;
+    justify-content: center; /* Центруємо колонки */
+    gap: 30px;
+    align-items: stretch;
+    max-width: 1100px;       /* Обмежуємо загальну ширину, щоб збільшити відступи по боках */
+    margin: 0 auto;          /* Центруємо весь ряд на сторінці */
+}
+
+.prices__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background: #fff;
+    padding: 40px 30px;
+    flex: 1 1 320px;         /* Гнучкість з базовою шириною */
+    max-width: 350px;        /* Максимальна ширина однієї колонки */
+    border-radius: 8px;
+    transition: 0.3s;
+    border: 1px solid #E5E5E5;
+    text-align: center;
+    position: relative;
+}
+
+.prices__card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.prices__card-popular {
+    border: 2px solid #1B7DFF;
+    transform: scale(1.05); /* Легкий акцент на центральну картку */
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(27, 125, 255, 0.15);
+}
+
+.prices__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #102746;
+}
+
+.prices__list {
+    flex-grow: 1; /* Кнопки завжди будуть на одному рівні внизу */
+    margin-bottom: 30px; 
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.prices__list li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #5E6282;
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 8px;
+}
+
+/* КНОПКА — СТАБІЛЬНІ СТИЛІ */
+.prices__card-btn {
+    position: relative !important; 
+    display: inline-block !important;
+    width: fit-content !important;
+    height: auto !important;
+    
+    margin-top: auto;
+    padding: 14px 35px;
+    background: #1B7DFF;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.prices__card-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 125, 255, 0.3);
+}
+
+/*PRICES END*/
+
+/*MAP START*/
+.map {
+    width: 100%;
+    height: 450px !important; /* Жорстко задаємо висоту */
+    margin-top: 50px;
+    margin-bottom: 0 !important; /* Прибираємо відступ знизу */
+    padding-bottom: 0 !important;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Сам iFrame Google Maps */
+.map iframe {
+    width: 100% !important;
+    height: 450px !important; /* Висота має збігатися з батьком */
+    border: 0 !important;
+    display: block !important;
+    margin: 0 !important;
+    /* Додатковий захист від зазорів знизу */
+    vertical-align: bottom; 
+}
+
+/*MAP END*/
+
+/* FOOTER START */
+.footer {
+    background: #0E1D28 !important;
+    padding: 80px 0 !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 0 !important; /* Приклеюємо до карти без білої смуги */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Стильна лінія */
+    color: #fff !important;
+    box-sizing: border-box;
+}
+
+.footer__wrapper {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    max-width: 1262px; /* ТОЧНО як у хедера */
+    margin: 0 auto !important;    /* Центрування */
+    padding: 0 15px !important;   /* ТОЧНО як у хедера */
+    width: 100% !important;
+}
+
+/* Прибираємо зміщення логотипа футера */
+.footer__logo {
+    display: flex;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.footer__logo-pic {
+    max-width: 160px; /* Переконайся, що ширина схожа на хедер */
+    height: auto;
+}
+
+.footer__menu-items {
+    display: flex !important;
+    gap: 100px !important;
+}
+
+.footer__menu-title {
+    color: #1B7DFF !important;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer__menu-link, .footer__menu-info {
+    color: #A7A7A7 !important;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+/* FOOTER END */
+
+/* Щоб лого було видно */
+.footer__logo-pic {
+    max-width: 160px;
+    height: auto;
+    display: block;
+}
+.footer__social-link img {
+    width: 25px;      /* Зробимо трохи більшими */
+    margin-right: 15px; /* Відступ між іконками */
+}
+/*FOOTER END*/
+
+/* Базовий стиль для всіх модалок */
+.modal {
+    display: none;          /* Ховаємо вікно */
+    position: fixed;        /* Фіксуємо поверх усього */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Чорний напівпрозорий фон */
+    z-index: 1000;          /* Має бути вище за карту та футер */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;       /* Дозволяємо скрол всередині вікна, якщо текст довгий */
+}
+
+/* Коли додаємо цей клас через JS — вікно з'являється */
+.modal.active {
+    display: flex;
+}
+
+/* Стиль самого контенту всередині модалки */
+.modal__content {
+    background-color: #fff;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    border-radius: 8px;
+}
