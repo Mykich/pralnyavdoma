@@ -66,9 +66,23 @@
 
     /* 2. КОМПАКТНИЙ ХЕДЕР */
     .header {
-        padding: 25px 0 !important; 
+        /* Примусово притискаємо до самого верху екрана */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+        /* Твоє налаштування висоти + врахування "чубчика" iPhone */
+        /* env(safe-area-inset-top) додасть відступ тільки там, де є виріз/годинник */
+        padding-top: calc(env(safe-area-inset-top, 0px) + 20px) !important;
+        padding-bottom: 20px !important;
+        
         background: rgba(16, 39, 70, 0.98);
         backdrop-filter: blur(10px);
+        
+        /* Щоб фон хедера точно заповнив простір за годинником */
+        margin: 0 !important;
+        z-index: 1000;
     }
 
     .header__wrapper {
