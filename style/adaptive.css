@@ -135,25 +135,31 @@
     .header__nav.active { right: 0; }
 
     /* 3. ГАРМОНІЙНЕ INTRO */
-    .intro {
-        min-height: 520px !important;
-        /* Падінг зверху має бути трохи більшим за висоту хедера, щоб текст не лип до нього */
-        padding: 100px 20px 40px !important; 
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; /* Центруємо контент по горизонталі */
-        text-align: center;
-        
-        /* ГОРЯЧИЙ ФІКС БІЛОЇ СМУГИ: */
-        margin-top: 0 !important; 
-        position: relative; /* Допомагає тримати фіксовані елементи на місці */
-        box-sizing: border-box;
-    }
+   .intro {
+    min-height: 520px !important;
+    padding: 100px 20px 40px !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    margin-top: 0 !important; 
+    position: relative; 
+    box-sizing: border-box;
 
-    .intro__title {
-    margin-top: 0 !important; /* ПРИБИРАЄМО ТУ САМУ ДІРКУ */
+    /* ФІКС: Тільки центральне затемнення під текстом */
+    background: radial-gradient(
+        circle, 
+        rgba(0, 0, 0, 0.7) 0%,   /* Густий колір у самому центрі */
+        rgba(0, 0, 0, 0.3) 50%,  /* Напівпрозорий на половині */
+        rgba(0, 0, 0, 0) 100%    /* Повна прозорість до країв фото */
+    ), 
+    url(../img/jpg/intro.jpg) no-repeat center;
+    background-size: cover;
+   }
+
+   .intro__title {
+    margin-top: 0 !important; 
     font-size: 25px; 
     line-height: 1.3;
     margin-bottom: 20px;
@@ -161,6 +167,10 @@
     margin-left: auto;
     margin-right: auto;
     font-weight: 600;
+    color: #ffffff;
+
+    /* ЛАЙФХАК: Тінь для чіткості */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
     .intro__text {
