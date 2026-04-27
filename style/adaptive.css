@@ -70,22 +70,22 @@
         top: 0;
         left: 0;
         width: 100%;
-        
-        /* 1. Додаємо "подушку" кольору зверху, яка вийде за межі екрана */
-        border-top: 100px solid rgba(16, 39, 70, 0.98); 
-        margin-top: -100px !important; 
-        
-        /* 2. Твій існуючий паддінг для Safe Area */
-        padding-top: calc(env(safe-area-inset-top, 0px) + 20px) !important;
-        padding-bottom: 20px !important;
-        
-        background: rgba(16, 39, 70, 0.98);
-        backdrop-filter: blur(10px);
         z-index: 1000;
 
-        /* Прибираємо можливі бічні відступи */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        /* Використовуємо чистий HEX колір без прозорості */
+        background: #0E1D28 !important; 
+        backdrop-filter: blur(10px);
+        
+        /* 1. ЛАЙФХАК: Тінь, що йде вгору на 100px. 
+           Вона закриє будь-яку дірку, навіть якщо Telegram глючить */
+        box-shadow: 0 -100px 0 0 #0E1D28;
+
+        /* 2. Падінги для iPhone та комфорту */
+        padding-top: calc(env(safe-area-inset-top, 0px) + 20px) !important;
+        padding-bottom: 20px !important;
+
+        /* Скидаємо маржини */
+        margin: 0 !important;
     }
 
     .header__wrapper {
