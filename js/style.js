@@ -34,7 +34,7 @@
         });
     }
 
-    // 3. ПРЕМІАЛЬНЕ БУРГЕР-МЕНЮ (Синхронізовано з CSS)
+    // 3. ПРЕМІАЛЬНЕ БУРГЕР-МЕНЮ
     const burgerItem = document.querySelector('.header__burger');
     const menu = document.querySelector('.header__nav');
     const menuLinks = document.querySelectorAll('.header__link');
@@ -52,7 +52,6 @@
         });
     }
 
-    // Закриття меню при кліку на посилання
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth < 992) {
@@ -63,7 +62,7 @@
         });
     });
 
-    // 4. Швидкий та плавний скрол (З ОФСЕТОМ ДЛЯ "ПОСЛУГ")
+    // 4. Швидкий та плавний скрол
     const scrollLinks = document.querySelectorAll('.js-scroll');
 
     scrollLinks.forEach(link => {
@@ -86,13 +85,15 @@
         });
     });
 
-    // 5. МОДАЛЬНІ ВІКНА
-    const modalLinks = document.querySelectorAll(".places__card-link, .places__view");
+    // 5. МОДАЛЬНІ ВІКНА (ОНОВЛЕНО)
+    // Додаємо селектор для кнопки "Дізнатися про методи"
+    const modalLinks = document.querySelectorAll(".places__card-link, .places__view, .js-open-methods");
 
     modalLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            const modalId = this.getAttribute("data-modal");
+            // Беремо ID або з data-modal, або з href
+            const modalId = this.getAttribute("data-modal") || this.getAttribute("href").substring(1);
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = "flex";
@@ -101,9 +102,13 @@
         });
     });
 
-    // Закриття модалок
+    // Закриття модалок (УНІВЕРСАЛЬНЕ)
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal__close") || e.target.classList.contains("modal")) {
+        // Додаємо перевірку на клас close-button (твій новий хрестик)
+        if (e.target.classList.contains("modal__close") || 
+            e.target.classList.contains("modal") || 
+            e.target.classList.contains("close-button")) {
+            
             const activeModal = e.target.closest(".modal") || e.target;
             activeModal.style.display = "none";
             

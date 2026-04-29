@@ -400,17 +400,36 @@ img {
 }
 
 /* ФІКС КНОПКИ: Змінив назву з .guide__link на .guide__view, як у тебе в HTML */
-.guide__view {
+.search__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B7DFF;
+    color: #fff !important;
+    padding: 15px 35px;
     font-size: 16px;
-    color: #1B7DFF;
+    font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-    display: inline-flex;
-    align-items: center; /* СТРІЛКА ПО ЦЕНТРУ ТЕКСТУ */
-    font-weight: 500;
-    transition: .2s linear;
+    border-radius: 8px; /* На десктопі легке закруглення */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
 }
-
+.search__btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+.btn-icon {
+    margin-left: 15px;
+    width: 25px; /* Розмір стрілочки */
+    height: auto;
+    transition: transform 0.2s ease;
+}
+.search__btn:hover .btn-icon {
+    transform: translateX(5px); /* Ефект руху стрілки при наведенні */
+}
 .guide__view::after {
     content: '';
     display: inline-block;
@@ -664,4 +683,43 @@ img {
     width: 90%;
     position: relative;
     border-radius: 8px;
+}
+/* Стилі для контенту всередині вікна "Методи чистки" */
+.modal__methods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.method-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.method-item:last-child {
+    border-bottom: none;
+}
+
+.method-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* Щоб картинка не стискалася */
+}
+
+.method-item h3 {
+    margin-bottom: 10px;
+    color: #102746; /* Твій темно-синій колір */
+    font-size: 20px;
+}
+
+.method-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
 }
