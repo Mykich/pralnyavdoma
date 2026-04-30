@@ -232,7 +232,7 @@
         padding: 10px 20px !important;
         background-color: #1B7DFF;
         color: #fff !important;
-        border-radius: 50px !important; /* У тебе було 50px і 12px в різних блоках, залишив 50px як пріоритет */
+        border-radius: 10px !important; /* У тебе було 50px і 12px в різних блоках, залишив 50px як пріоритет */
         text-align: center !important;
         line-height: 1.2 !important;
         font-size: 14px !important;
@@ -306,6 +306,19 @@
         margin: 0 auto 15px;
         max-width: 55px;
     }
+    .benefits__card-search::after,
+    .benefits__card-search::before {
+        content: none; /* Это убирает иконку, если она добавлялась как псевдоэлемент */
+}
+.benefits__card-search {
+    text-align: center; /* Центрирует текст внутри кнопки */
+    display: block;      /* Делает кнопку блочной, чтобы её можно было отцентрировать на странице */
+    width: 100%;       /* На всю ширину карточки, или укажите фиксированную ширину, например, max-width: 250px; */
+    max-width: 280px;  /* Чтобы кнопка не была слишком широкой на мобильном */
+    margin: 20px auto 0; /* Отступ сверху 20px, авто-отступы по бокам (для центрирования), снизу 0 */
+    padding-right: 15px; /* Сбросить отступ, который мог быть зарезервирован для стрелки */
+    padding-left: 15px;
+}
 
     /* 7. Плейсес */
     .places { 
