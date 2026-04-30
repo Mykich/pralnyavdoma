@@ -408,6 +408,19 @@
         height: 26px;
         margin: 0 !important;
     }
+    /* --- ФИКС ДЛЯ МОДАЛКИ МЕТОДОВ ЧИСТКИ --- */
+    .method-item {
+        flex-direction: column !important; /* Ставим картинку и текст друг под другом */
+        align-items: center !important;    /* Выравниваем все строго по центру */
+        text-align: center !important;     /* Текст тоже по центру */
+        gap: 15px !important;              /* Делаем аккуратный отступ между фото и заголовком */
+    }
+
+    .method-item img {
+        margin: 0 auto !important;         /* Центрируем саму картинку */
+        width: 150px !important;           /* Делаем фото чуть больше для мобилки (по желанию) */
+        height: 150px !important;
+    }
 
 } /* Кнець медіа 767px */
 

@@ -655,36 +655,14 @@ img {
 }
 /*FOOTER END*/
 
-/* Базовий стиль для всіх модалок */
-.modal {
-    display: none;          /* Ховаємо вікно */
-    position: fixed;        /* Фіксуємо поверх усього */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Чорний напівпрозорий фон */
-    z-index: 1000;          /* Має бути вище за карту та футер */
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;       /* Дозволяємо скрол всередині вікна, якщо текст довгий */
+/* --- НОВІ ПРЕМІУМ СТИЛІ ДЛЯ "МЕТОДІВ ЧИСТКИ" --- */
+
+/* Додаємо спеціальний клас, щоб звузити модалку для більшої акуратності */
+.modal__content--methods {
+    max-width: 600px; 
+    text-align: center;
 }
 
-/* Коли додаємо цей клас через JS — вікно з'являється */
-.modal.active {
-    display: flex;
-}
-
-/* Стиль самого контенту всередині модалки */
-.modal__content {
-    background-color: #fff;
-    padding: 40px;
-    max-width: 800px;
-    width: 90%;
-    position: relative;
-    border-radius: 8px;
-}
-/* Стилі для контенту всередині вікна "Методи чистки" */
 .modal__methods-list {
     display: flex;
     flex-direction: column;
@@ -692,34 +670,108 @@ img {
     margin-top: 20px;
 }
 
+/* Оновлена карточка методу (тепер це красиві блоки з тінями замість ліній) */
 .method-item {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+    flex-direction: column; /* Елементи стоять один під одним */
+    align-items: center;    /* Відцентровано */
+    text-align: center;     
+    background-color: #ffffff;
+    border-radius: 20px;    /* М'які преміальні кути */
+    padding: 25px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Легка тінь */
 }
 
-.method-item:last-child {
-    border-bottom: none;
+/* Кольорові кружечки-контейнери для іконок */
+.method-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-.method-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0; /* Щоб картинка не стискалася */
+.method-icon-container--aqua {
+    background-color: #F0F4FA; /* Ніжно-синій фон */
 }
 
+.method-icon-container--iron {
+    background-color: #FCF6EE; /* Ніжно-пісочний фон */
+}
+
+/* Сама SVG картинка (замінює твій старий .method-item img) */
+.method-icon-pro {
+    width: 32px;  /* Маленька, чітка іконка */
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Оновлені заголовки та тексти */
 .method-item h3 {
     margin-bottom: 10px;
-    color: #102746; /* Твій темно-синій колір */
-    font-size: 20px;
+    color: #1B7DFF; /* Робимо заголовок фірмовим синім кольором */
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .method-item p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #444;
+    font-size: 14px; 
+    line-height: 1.6;
+    color: #5E6282;
+    max-width: 400px; /* Обмежуємо ширину тексту, щоб він гарно читався і не розповзався */
+    margin: 0 auto;
+}
+/* =========================================
+   БАЗОВІ СТИЛІ ДЛЯ ВСІХ МОДАЛЬНИХ ВІКОН
+   (Цей блок ховає вікна і робить їх спливаючими)
+   ========================================= */
+.modal {
+    display: none;          /* ЖОРСТКО ХОВАЄМО ВІКНО */
+    position: fixed;        /* Фіксуємо поверх екрану */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(16, 39, 70, 0.8); /* Красивий темно-синій напівпрозорий фон */
+    z-index: 9999;          /* Робимо вище за футер, карту і шапку */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;          /* Щоб вікно не прилипало до країв на телефоні */
+}
+
+/* Клас, який додає JS, щоб показати вікно */
+.modal.active {
+    display: flex !important;
+}
+
+/* Базовий контейнер для контенту всередині */
+.modal__content {
+    background-color: #fff;
+    padding: 40px 30px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;    /* Преміальні закруглення */
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* Хрестик закриття */
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    line-height: 1;
+    color: #5E6282;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.modal__close:hover {
+    color: #1B7DFF;
 }

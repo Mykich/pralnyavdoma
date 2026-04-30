@@ -273,7 +273,7 @@
     </div>
 </footer>
    </section> 
-   <script src="./js/style.js"></script>
+   
 
 <div class="modal" id="modal-all-services">
     <div class="modal__content" style="max-width: 800px;">
@@ -309,26 +309,34 @@
 </div>
 
 <div id="methodsModal" class="modal">
-    <div class="modal__content" style="max-width: 700px;">
+    <div class="modal__content modal__content--methods">
         <span class="modal__close" id="closeMethods" style="cursor:pointer;">&times;</span>
-        <h2 class="modal__title" style="margin-bottom: 25px;">Методи делікатної чистки</h2>
+        <h2 class="modal__title">Методи делікатної чистки</h2>
         
         <div class="modal__methods-list">
-            <div class="method-item" style="display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; text-align: left;">
-                <img src="img/jpg/wet-cleaning.jpg" alt="Wet Cleaning" style="width: 120px; height: 120px; object-fit: cover; border-radius: 10px; flex-shrink: 0;">
+            
+            <!-- Метод 1: AQUA-чистка -->
+            <div class="method-item">
+                <div class="method-icon-container method-icon-container--aqua">
+                    <img src="img/svg/wet-cleaning.svg" alt="Wet Cleaning" class="method-icon-pro">
+                </div>
                 <div class="method-text">
-                    <h3 style="color: #1B7DFF; margin-bottom: 10px;">AQUA-чистка (Wet Cleaning)</h3>
-                    <p style="color: #5E6282; line-height: 1.5;">Альтернатива сухій хімчистці. Використовується для делікатних тканин (шовк, кашемір), де замість агресивних розчинників працює вода та біорозкладні засоби. Це ідеально для твоїх пуховиків <strong>IENKI IENKI</strong>.</p>
+                    <h3>AQUA-чистка (Wet Cleaning)</h3>
+                    <p>Альтернатива сухій хімчистці. Використовується для делікатних тканин (шовк, кашемір), де замість агресивних розчинників працює вода та біорозкладні засоби. Це ідеально для твоїх пуховиків.</p>
                 </div>
             </div>
 
-            <div class="method-item" style="display: flex; gap: 20px; align-items: flex-start; text-align: left;">
-                <img src="img/jpg/pro-ironing.jpg" alt="Ironing" style="width: 120px; height: 120px; object-fit: cover; border-radius: 10px; flex-shrink: 0;">
+            <!-- Метод 2: Прасування -->
+            <div class="method-item">
+                <div class="method-icon-container method-icon-container--iron">
+                    <img src="img/svg/pro-ironing.svg" alt="Ironing" class="method-icon-pro">
+                </div>
                 <div class="method-text">
-                    <h3 style="color: #1B7DFF; margin-bottom: 10px;">Професійне прасування</h3>
-                    <p style="color: #5E6282; line-height: 1.5;">Використання пароманекенів та прасувальних столів з вакуумним відсмоктуванням вологи. Це дозволяє уникнути "лиску" на тканині та заломів.</p>
+                    <h3>Професійне прасування</h3>
+                    <p>Використання пароманекенів та прасувальних столів з вакуумним відсмоктуванням вологи. Це дозволяє уникнути "лиску" на тканині та заломів.</p>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -379,5 +387,6 @@
         </div>
     </div>
 </div>
+<script src="./js/style.js"></script>
 </body>
 </html>
