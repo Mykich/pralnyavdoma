@@ -51,7 +51,7 @@
     <!--header end-->
 
     <!--intro start-->
-    <main class="main">
+<main class="main">
     <section class="intro" id="intro">
         <div class="wrapper">
             <h1 class="intro__title">Бездоганна чистота для вашого гардероба</h1>
@@ -59,16 +59,18 @@
                 Професійна пральня та ательє у вашому будинку. 
                 Ми дбаємо про ваші речі, використовуючи найкраще європейське обладнання та багаторічний досвід.
             </p>
-         <form class="search__form">
+            
+            <!-- Ось тут замінили form на div і додали атрибути кнопці -->
+            <div class="search__form">
     <fieldset class="serach__form-wrap" style="border: none; padding: 0;">
         <div class="search__form-info" style="display: flex; justify-content: center; background: none;">
-            <button type="submit" class="search__btn">ЗРОБИТИ ЗАМОВЛЕННЯ</button>
+            <!-- Змінили places__card-link на js-open-methods -->
+            <button type="button" class="search__btn js-open-methods" data-modal="modal-order-choice">ЗРОБИТИ ЗАМОВЛЕННЯ</button>
         </div>  
     </fieldset>
-</form>
-        </div>
+</div>
     </section>
-    <!--intro end-->
+<!--intro end-->
 
     <!--benefits start-->
     <section class="benefits" id="services"> <div class="wrapper"> <div class="benefits__wrapper">
@@ -419,6 +421,29 @@
             <tr><td>Заміна підкладки</td><td>від 800 ₴</td></tr>
         </table>
         <a href="https://t.me/PralniaVdomaBot" class="btn-order">Зробити замовлення в Telegram</a>
+    </div>
+</div>
+
+<!-- Модальне вікно: Вибір способу замовлення -->
+<div class="modal" id="modal-order-choice">
+    <div class="modal__content">
+        <button class="modal__close">&times;</button>
+        <h2 class="modal__title">Як вам зручніше?</h2>
+        <p style="text-align: center; color: #5E6282; margin-bottom: 30px;">
+            Оберіть формат обслуговування, щоб наш бот-асистент миттєво підготував заявку.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Додали target="_blank" -->
+    <a href="https://t.me/PralniaVdomaBot?start=order" target="_blank" class="btn-order" style="background-color: #1B7DFF;">
+        📱 Оформити замовлення через Telegram
+    </a>
+    
+    <!-- Додали target="_blank" -->
+    <a href="https://t.me/PralniaVdomaBot?start=visit" target="_blank" class="btn-order" style="background-color: #102746;">
+        📍 Завітаю до вас особисто
+    </a>
+</div>
     </div>
 </div>
 
