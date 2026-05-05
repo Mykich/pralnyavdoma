@@ -97,7 +97,8 @@
     }
 
     // 5. МОДАЛЬНІ ВІКНА (ТІЛЬКИ СПРАВЖНІ ВІКНА)
-    const modalLinks = document.querySelectorAll(".places__card-link, .places__view, .js-open-methods");
+    // ДОДАНО: .prices__card-btn для точного перехоплення кліків по нових кнопках прайсу
+    const modalLinks = document.querySelectorAll(".places__card-link, .places__view, .js-open-methods, .prices__card-btn");
 
     if (modalLinks) {
         modalLinks.forEach(link => {

@@ -728,50 +728,177 @@ img {
    (Цей блок ховає вікна і робить їх спливаючими)
    ========================================= */
 .modal {
+
     display: none;          /* ЖОРСТКО ХОВАЄМО ВІКНО */
+
     position: fixed;        /* Фіксуємо поверх екрану */
+
     top: 0;
+
     left: 0;
+
     width: 100vw;
+
     height: 100vh;
+
     background-color: rgba(16, 39, 70, 0.8); /* Красивий темно-синій напівпрозорий фон */
+
     z-index: 9999;          /* Робимо вище за футер, карту і шапку */
+
     justify-content: center;
+
     align-items: center;
+
     overflow-y: auto;
+
     padding: 20px;          /* Щоб вікно не прилипало до країв на телефоні */
+
 }
+
+
 
 /* Клас, який додає JS, щоб показати вікно */
+
 .modal.active {
+
     display: flex !important;
+
 }
+
+
 
 /* Базовий контейнер для контенту всередині */
+
 .modal__content {
+
     background-color: #fff;
+
     padding: 40px 30px;
+
     max-width: 800px;
+
     width: 100%;
+
     position: relative;
+
     border-radius: 20px;    /* Преміальні закруглення */
+
     margin: auto;
+
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+
 }
+
+
 
 /* Хрестик закриття */
+
 .modal__close {
+
     position: absolute;
+
     top: 15px;
+
     right: 20px;
+
     font-size: 30px;
+
     line-height: 1;
+
     color: #5E6282;
+
     cursor: pointer;
+
     transition: 0.3s;
+
     z-index: 10;
+
 }
 
+
+
 .modal__close:hover {
+
     color: #1B7DFF;
+
+}
+/* =========================================
+   СТИЛИ ДЛЯ КОНТЕНТА ВНУТРИ ОКНА ПРАЙСА
+   ========================================= */
+
+/* Заголовок окна */
+.modal__title {
+    text-align: center;
+    color: #102746; /* Темно-синий в тон твоего фона */
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Таблица с ценами */
+.modal__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+/* Строки таблицы */
+.modal__table td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #EAEAEA;
+    font-size: 16px;
+    color: #5E6282;
+}
+
+/* Убираем полоску у самой последней строки */
+.modal__table tr:last-child td {
+    border-bottom: none; 
+}
+
+/* Левая колонка: Название вещи */
+.modal__table td:first-child {
+    font-weight: 500;
+    color: #181E4B; /* Более темный контрастный цвет текста */
+}
+
+/* Правая колонка: Цена */
+.modal__table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: #1B7DFF; /* Яркий синий акцент, как при наведении на крестик */
+}
+
+/* Премиальная кнопка перехода в Телеграм-бот */
+.btn-order {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #1B7DFF;
+    color: #fff;
+    padding: 18px 20px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Эффект при наведении на кнопку */
+.btn-order:hover {
+    background-color: #102746; /* Меняем на фирменный темно-синий */
+    transform: translateY(-2px); /* Кнопка слегка приподнимается */
+    color: #fff;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 500px) {
+    .modal__title {
+        font-size: 22px;
+    }
+    .modal__table td {
+        font-size: 14px;
+        padding: 12px 5px;
+    }
 }
