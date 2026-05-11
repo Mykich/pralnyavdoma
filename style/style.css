@@ -870,26 +870,136 @@ img {
 }
 
 /* Премиальная кнопка перехода в Телеграм-бот */
+/* Базові налаштування кнопок */
 .btn-order {
     display: block;
     width: 100%;
     text-align: center;
-    background-color: #1B7DFF;
     color: #fff;
     padding: 18px 20px;
     text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Легкий контур для об'єму */
 }
 
-/* Эффект при наведении на кнопку */
-.btn-order:hover {
-    background-color: #102746; /* Меняем на фирменный темно-синий */
-    transform: translateY(-2px); /* Кнопка слегка приподнимается */
+/* 1. Преміальний синій (для Telegram) */
+.btn-premium-blue {
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
+    box-shadow: 0 4px 15px rgba(27, 125, 255, 0.3);
+}
+
+.btn-premium-blue:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.5);
+    transform: translateY(-2px);
     color: #fff;
+}
+
+/* 2. Преміальний темний (для Телефону) */
+.btn-premium-dark {
+    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
+    box-shadow: 0 4px 15px rgba(16, 39, 70, 0.3);
+}
+
+.btn-premium-dark:hover {
+    background: linear-gradient(135deg, #060F1C 0%, #102746 100%);
+    box-shadow: 0 6px 20px rgba(16, 39, 70, 0.5);
+    transform: translateY(-2px);
+    color: #fff;
+}
+/* =========================================
+   КНОПКИ В МОДАЛЬНИХ ВІКНАХ
+   ========================================= */
+/* Базові налаштування кнопок */
+.btn-order {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 18px 20px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 1. Преміальний синій (для Telegram) */
+.btn-premium-blue {
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
+    box-shadow: 0 4px 15px rgba(27, 125, 255, 0.3);
+}
+
+.btn-premium-blue:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.5);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* 2. Преміальний темний (для Телефону) */
+.btn-premium-dark {
+    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
+    box-shadow: 0 4px 15px rgba(16, 39, 70, 0.3);
+}
+
+.btn-premium-dark:hover {
+    background: linear-gradient(135deg, #060F1C 0%, #102746 100%);
+    box-shadow: 0 6px 20px rgba(16, 39, 70, 0.5);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* =========================================
+   ГОЛОВНА КНОПКА "ЗРОБИТИ ЗАМОВЛЕННЯ"
+   ========================================= */
+.search__btn {
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%) !important;
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+}
+
+.search__btn:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%) !important;
+    box-shadow: 0 8px 25px rgba(27, 125, 255, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+/* =========================================
+   КНОПКА ЗАКРИТТЯ МОДАЛЬНОГО ВІКНА [X]
+   ========================================= */
+.modal__close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-color: rgba(235, 87, 87, 0.1) !important; /* Легкий червоний фон */
+    color: #EB5757 !important; /* Красивий преміальний червоний колір */
+    border: none !important;
+    border-radius: 50% !important; /* Робимо ідеальне коло */
+    font-size: 24px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    padding: 0 !important;
+}
+
+/* Ефект при наведенні мишки */
+.modal__close:hover {
+    background-color: #EB5757 !important; /* Фон стає насичено червоним */
+    color: #fff !important; /* Сам хрестик стає білим */
+    transform: rotate(90deg) scale(1.1) !important; /* Плавний поворот і легке збільшення */
 }
 
 /* Адаптив для телефонов */
