@@ -284,7 +284,21 @@
         margin: 20px auto 0; 
         padding-right: 15px; 
         padding-left: 15px;
+        
     }
+
+/* Уменьшаем отступ у самого текста */
+.benefits__card p { 
+    margin-bottom: 10px !important; 
+}
+
+/* Если нужно еще плотнее, уменьшаем верхний отступ у кнопки */
+.benefits__card-search {
+    margin-top: 10px !important; /* Было 20px, пробуем 10px */
+    /* остальные твои стили... */
+}
+
+
 
     /* Плейсес */
     .places { margin-bottom: 60px; }
