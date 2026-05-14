@@ -146,3 +146,15 @@
     });
 
 }());
+// Показуємо/ховаємо кнопку "Вгору" при скролі
+const scrollTopBtn = document.querySelector('.js-scroll-top');
+
+window.addEventListener('scroll', () => {
+    // Якщо проскролили більше 300 пікселів вниз — показуємо
+    if (window.scrollY > 300) { 
+        scrollTopBtn.classList.add('show');
+    } else {
+        // Якщо повернулися наверх — ховаємо
+        scrollTopBtn.classList.remove('show');
+    }
+});

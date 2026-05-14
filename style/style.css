@@ -653,6 +653,54 @@ img {
     width: 25px;      /* Зробимо трохи більшими */
     margin-right: 15px; /* Відступ між іконками */
 }
+/* =========================================
+   СОЦМЕРЕЖІ У ФУТЕРІ
+   ========================================= */
+.footer__socials {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Центруємо іконки */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /* Наш фірмовий темний колір у спокійному стані */
+    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(16, 39, 70, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Загальна поведінка при наведенні (підскок) */
+.social-link:hover {
+    transform: translateY(-4px);
+    color: #ffffff;
+}
+
+/* Фірмові кольори при наведенні */
+.social-link.social-inst:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 6px 15px rgba(220, 39, 67, 0.4);
+}
+
+.social-link.social-tg:hover {
+    background: #1B7DFF;
+    box-shadow: 0 6px 15px rgba(27, 125, 255, 0.4);
+}
+
+.social-link.social-wa:hover {
+    background: #25D366;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
 /*FOOTER END*/
 
 /* --- НОВІ ПРЕМІУМ СТИЛІ ДЛЯ "МЕТОДІВ ЧИСТКИ" --- */
@@ -1011,4 +1059,48 @@ img {
         font-size: 14px;
         padding: 12px 5px;
     }
+}
+/* =========================================
+   КНОПКА ВГОРУ (SCROLL TO TOP)
+   ========================================= */
+/* Плавний скрол для всієї сторінки */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Базовий стан кнопки (схована внизу) */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(27, 125, 255, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99; /* Завжди поверх інших елементів */
+}
+
+/* Клас, який буде додавати JS для показу кнопки */
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ефект при наведенні */
+.scroll-top-btn:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.5);
+    transform: translateY(-3px);
+    color: #fff;
 }
