@@ -1,24 +1,22 @@
-/* BASIC START*/
-
+/* =========================================
+   BASIC START
+   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
+html, body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     color: #102746;
     background-color: #fff;
-    overflow-x: hidden; /* Щоб нічого не їхало вбік */
-}
-html, body {
     margin: 0 !important;
     padding: 0 !important;
     width: 100%;
-    overflow-x: hidden;
-    /* Це прибере мікро-відступи, які браузер додає автоматично */
+    overflow-x: hidden; /* Щоб нічого не їхало вбік */
+    scroll-behavior: smooth; /* Плавний скрол для всієї сторінки */
 }
 
 img {
@@ -45,9 +43,50 @@ img {
     position: relative;
     padding-bottom: 10px;
 }
-/* BASIC END*/
+/* BASIC END */
 
-/* HEADER START*/
+/* =========================================
+   БАЗОВІ КНОПКИ (Об'єднані стилі)
+   ========================================= */
+.search__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    cursor: pointer;
+    line-height: 1;
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%) !important;
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+}
+
+.search__btn:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%) !important;
+    box-shadow: 0 8px 25px rgba(27, 125, 255, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-icon {
+    margin-left: 15px;
+    width: 25px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.search__btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   HEADER START
+   ========================================= */
 .header {
     position: fixed;
     top: 0;
@@ -55,10 +94,11 @@ img {
     width: 100%;
     z-index: 1000;
     padding: 20px 0;
-    margin: 0; /* Додай це обов'язково */
+    margin: 0;
     transition: 0.3s background;
     box-sizing: border-box;
 }
+
 .header_activ {
     background: #102746;
     padding: 10px 0;
@@ -74,7 +114,6 @@ img {
     width: 100%;
 }
 
-/* Прибираємо можливі зміщення логотипа */
 .header__logo {
     display: flex;
     margin: 0 !important;
@@ -97,10 +136,45 @@ img {
 }
 
 .header__link:hover { opacity: .75; }
-/* HEADER END*/
 
+/* ТЕКСТОВЕ МЕНЮ ЗАМІСТЬ БУРГЕРА */
+.header__burger {
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 100 !important; 
+    cursor: pointer !important;
+}
 
-/* INTRO START */
+.header__burger::before,
+.header__burger::after,
+.header__burger > span:not(.burger-text) {
+    display: none !important;
+}
+
+.burger-text {
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    color: #fff !important; 
+    transition: all 0.3s ease !important;
+}
+
+.header__burger.active .burger-text {
+    color: #1B7DFF !important; 
+    transform: scale(0.95);
+}
+/* HEADER END */
+
+/* =========================================
+   INTRO START
+   ========================================= */
 .intro {
     min-height: 100vh;
     background: url(../img/jpg/intro.jpg) no-repeat center;
@@ -108,17 +182,16 @@ img {
     display: flex;
     align-items: center;
     color: #fff;
-    /* ФІКСИ: */
-    margin-top: 0 !important;   /* Забороняємо будь-які відступи зверху */
-    padding-top: 80px;          /* Компенсуємо висоту хедера, щоб текст не залізав під нього */
+    margin-top: 0 !important;  
+    padding-top: 80px;         
     box-sizing: border-box;
 }
 
 .intro__title {
-    max-width: 900px;      /* Збільшуємо максимальну ширину, щоб влізло все речення */
-    width: 100%;           /* Дозволяємо розтягуватися */
-    white-space: nowrap;   /* КРИТИЧНО: забороняє тексту переноситися на новий рядок */
-    font-size: 50px;       /* Якщо все одно не влазить, спробуй зменшити до 45px */
+    max-width: 900px;      
+    width: 100%;           
+    white-space: nowrap;   
+    font-size: 50px;       
     line-height: 60px;
     margin-bottom: 22px;
 }
@@ -129,26 +202,11 @@ img {
     max-width: 540px;
     margin-bottom: 60px;
 }
-
-.search__btn {
-    padding: 15px 40px;
-    background: #1B7DFF;
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.search__btn:hover {
-    background: #0056b3;
-}
 /* INTRO END */
 
-
-/* BENEFITS START */
+/* =========================================
+   BENEFITS START
+   ========================================= */
 .benefits {
     margin-bottom: 131px;
     position: relative;
@@ -156,20 +214,18 @@ img {
     scroll-margin-top: 150px;
 }
 
-/* Біла плашка, яка наїжджає на картинку */
 .benefits__wrapper {
     max-width: 1262px;
     background-color: #ffffff !important;
     margin: 0 auto;
     box-shadow: 0px 10px 30px rgba(21, 24, 36, 0.15);
     position: relative;
-    top: -100px; /* Поставив -50px, щоб не перекривати кнопку */
+    top: -100px; 
     z-index: 20;
     padding: 60px 100px;
     display: block;
 }
 
-/* Заголовок "Наші Послуги" */
 .benefits__title {
     font-size: 35px;
     font-weight: 500;
@@ -178,7 +234,6 @@ img {
     display: block;
 }
 
-/* Контейнер для карток */
 .benefits__cards {
     display: flex;
     justify-content: space-between;
@@ -186,7 +241,6 @@ img {
     gap: 30px;
 }
 
-/* Сама картка */
 .benefits__card {
     display: flex;
     flex-direction: column; 
@@ -207,7 +261,6 @@ img {
     margin-bottom: 26px;
 }
 
-/* Опис - саме він вирівнює кнопки */
 .benefits__card-text {
     color: #102746;
     font-weight: 400;
@@ -217,17 +270,16 @@ img {
     flex-grow: 1; 
 }
 
-/* КНОПКА ЗІ СТРІЛКОЮ */
 .benefits__card-search {
     color: #006DFE;
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
-    display: inline-flex; /* Важливо для центрування */
-    align-items: center;    /* Центрує текст і стрілку по вертикалі */
+    display: inline-flex; 
+    align-items: center;    
     text-transform: uppercase;
     margin-top: auto; 
-    line-height: 1;        /* Щоб висота рядка не збивала центр */
+    line-height: 1;        
 }
 
 .benefits__card-search::after {
@@ -239,18 +291,17 @@ img {
     background-size: contain;
     margin-left: 15px;
     transition: 0.2s ease-in-out;
-    
-    /* ВИПРАВЛЕНО: прибрали margin-bottom, який тягнув стрілку вниз */
     margin-bottom: 0; 
 }
 
 .benefits__card-search:hover::after {
     transform: translateX(10px);
 }
-
 /* BENEFITS END */
 
-/* PLACES START */
+/* =========================================
+   PLACES START
+   ========================================= */
 .places { margin-bottom: 131px; }
 
 .places__top {
@@ -260,10 +311,9 @@ img {
     margin-bottom: 50px;
 }
 
-/* ПРАВКА: Додали position: relative та зняли конфлікт з розтягуванням */
 .places__view { 
-    position: relative; /* Щоб кнопка не розтягувалася на весь блок */
-    z-index: 5;         /* Щоб була поверх усіх шарів */
+    position: relative; 
+    z-index: 5;         
     color: #1B7DFF; 
     text-decoration: none; 
     transition: opacity 0.3s;
@@ -274,13 +324,12 @@ img {
 
 .places__view:hover { opacity: 0.7; }
 
-/* ПРАВКА: Корекція стрілочки */
 .places__view::after {
     content: '';
     display: inline-block;
     width: 33px;
     height: 8px;
-    background: url(../img/svg/arow.svg) no-repeat center; /* Перевір назву файлу arow.svg або arrow.svg */
+    background: url(../img/svg/arow.svg) no-repeat center; 
     margin-left: 20px;
 }
 
@@ -333,7 +382,6 @@ img {
     text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
 }
 
-/* Цей клас тепер використовується ТІЛЬКИ для карток */
 .places__card-link { 
     position: absolute; 
     top: 0; left: 0; 
@@ -341,31 +389,29 @@ img {
     z-index: 4; 
 }
 
-/* Розтяжка карток */
 .places__card-top { grid-column: span 3; }
 .places__card-buttom { grid-column: span 6; }
-
 /* PLACES END */
 
-/*GUIDS START*/
+/* =========================================
+   GUIDES START
+   ========================================= */
 .guids {
     margin-bottom: 139px;
 }
 
 .guide__goide {
     display: grid;
-    /* Використовуємо 1fr 1fr, щоб колонки завжди були рівними і не наповзали одна на одну */
     grid-template-columns: 1fr 1fr; 
     gap: 108px;
     align-items: center;
-    margin-bottom: 120px; /* Збільшив відступ між блоками IPSO та Ательє */
+    margin-bottom: 120px; 
 }
 
 .guide__pic img {
     max-width: 100%;
     height: auto;
     display: block;
-    /* Гарантуємо, що картинка не вийде за межі своєї колонки */
     object-fit: contain; 
 }
 
@@ -385,7 +431,6 @@ img {
     margin-bottom: 30px;
 }
 
-/* Стилі для списку в Ательє (Bespoke, Down Care і т.д.) */
 .guide__features {
     list-style: none;
     padding: 0;
@@ -399,43 +444,11 @@ img {
     color: #102746;
 }
 
-/* ФІКС КНОПКИ: Змінив назву з .guide__link на .guide__view, як у тебе в HTML */
-.search__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1B7DFF;
-    color: #fff !important;
-    padding: 15px 35px;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 8px; /* На десктопі легке закруглення */
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    line-height: 1;
-}
-.search__btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-.btn-icon {
-    margin-left: 15px;
-    width: 25px; /* Розмір стрілочки */
-    height: auto;
-    transition: transform 0.2s ease;
-}
-.search__btn:hover .btn-icon {
-    transform: translateX(5px); /* Ефект руху стрілки при наведенні */
-}
 .guide__view::after {
     content: '';
     display: inline-block;
     width: 33px;
     height: 8px;
-    /* Перевір назву файлу: було arow.svg, можливо треба arrow.svg? */
     background: url('../img/svg/arow.svg') no-repeat center;
     background-size: contain;
     margin-left: 15px;
@@ -449,18 +462,19 @@ img {
 .guide__view:hover {
     opacity: 0.8;
 }
+/* GUIDES END */
 
-/*GUIDS END*/
-
-/* PRICES START */
+/* =========================================
+   PRICES START
+   ========================================= */
 .prices {
-    margin-bottom: 120px; /* Великий відступ від карти для чистоти дизайну */
+    margin-bottom: 120px; 
     padding: 100px 0 60px 0;
     background: #F4F5F7;
 }
 
 #prices {
-    scroll-margin-top: 100px; /* Відступ при скролі через фіксовану шапку */
+    scroll-margin-top: 100px; 
 }
 
 .prices__title {
@@ -474,14 +488,13 @@ img {
     color: #102746;
 }
 
-/* КОНТЕЙНЕР ДЛЯ КАРТОК — ТУТ МИ ЗВУЗИЛИ БЛОКИ */
 .prices__cards {
     display: flex;
-    justify-content: center; /* Центруємо колонки */
+    justify-content: center; 
     gap: 30px;
     align-items: stretch;
-    max-width: 1100px;       /* Обмежуємо загальну ширину, щоб збільшити відступи по боках */
-    margin: 0 auto;          /* Центруємо весь ряд на сторінці */
+    max-width: 1100px;       
+    margin: 0 auto;          
 }
 
 .prices__card {
@@ -490,8 +503,8 @@ img {
     align-items: center; 
     background: #fff;
     padding: 40px 30px;
-    flex: 1 1 320px;         /* Гнучкість з базовою шириною */
-    max-width: 350px;        /* Максимальна ширина однієї колонки */
+    flex: 1 1 320px;         
+    max-width: 350px;        
     border-radius: 8px;
     transition: 0.3s;
     border: 1px solid #E5E5E5;
@@ -505,7 +518,7 @@ img {
 
 .prices__card-popular {
     border: 2px solid #1B7DFF;
-    transform: scale(1.05); /* Легкий акцент на центральну картку */
+    transform: scale(1.05); 
     z-index: 2;
     box-shadow: 0 10px 30px rgba(27, 125, 255, 0.15);
 }
@@ -518,7 +531,7 @@ img {
 }
 
 .prices__list {
-    flex-grow: 1; /* Кнопки завжди будуть на одному рівні внизу */
+    flex-grow: 1; 
     margin-bottom: 30px; 
     padding: 0;
     width: 100%;
@@ -533,13 +546,11 @@ img {
     padding-bottom: 8px;
 }
 
-/* КНОПКА — СТАБІЛЬНІ СТИЛІ */
 .prices__card-btn {
     position: relative !important; 
     display: inline-block !important;
     width: fit-content !important;
     height: auto !important;
-    
     margin-top: auto;
     padding: 14px 35px;
     background: #1B7DFF;
@@ -560,15 +571,16 @@ img {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(27, 125, 255, 0.3);
 }
+/* PRICES END */
 
-/*PRICES END*/
-
-/*MAP START*/
+/* =========================================
+   MAP START
+   ========================================= */
 .map {
     width: 100%;
-    height: 450px !important; /* Жорстко задаємо висоту */
+    height: 450px !important; 
     margin-top: 50px;
-    margin-bottom: 0 !important; /* Прибираємо відступ знизу */
+    margin-bottom: 0 !important; 
     padding-bottom: 0 !important;
     line-height: 0;
     font-size: 0;
@@ -576,27 +588,26 @@ img {
     background-color: #f0f0f0;
 }
 
-/* Сам iFrame Google Maps */
 .map iframe {
     width: 100% !important;
-    height: 450px !important; /* Висота має збігатися з батьком */
+    height: 450px !important; 
     border: 0 !important;
     display: block !important;
     margin: 0 !important;
-    /* Додатковий захист від зазорів знизу */
     vertical-align: bottom; 
 }
+/* MAP END */
 
-/*MAP END*/
-
-/* FOOTER START */
+/* =========================================
+   FOOTER START
+   ========================================= */
 .footer {
     background: #0E1D28 !important;
     padding: 80px 0 !important;
     display: block !important;
     width: 100% !important;
-    margin-top: 0 !important; /* Приклеюємо до карти без білої смуги */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Стильна лінія */
+    margin-top: 0 !important; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
     color: #fff !important;
     box-sizing: border-box;
 }
@@ -605,13 +616,12 @@ img {
     display: flex !important;
     justify-content: space-between !important;
     align-items: flex-start !important;
-    max-width: 1262px; /* ТОЧНО як у хедера */
-    margin: 0 auto !important;    /* Центрування */
-    padding: 0 15px !important;   /* ТОЧНО як у хедера */
+    max-width: 1262px; 
+    margin: 0 auto !important;    
+    padding: 0 15px !important;   
     width: 100% !important;
 }
 
-/* Прибираємо зміщення логотипа футера */
 .footer__logo {
     display: flex;
     margin: 0 !important;
@@ -619,8 +629,9 @@ img {
 }
 
 .footer__logo-pic {
-    max-width: 160px; /* Переконайся, що ширина схожа на хедер */
+    max-width: 160px;
     height: auto;
+    display: block;
 }
 
 .footer__menu-items {
@@ -641,25 +652,11 @@ img {
     margin-bottom: 10px;
     display: block;
 }
-/* FOOTER END */
 
-/* Щоб лого було видно */
-.footer__logo-pic {
-    max-width: 160px;
-    height: auto;
-    display: block;
-}
-.footer__social-link img {
-    width: 25px;      /* Зробимо трохи більшими */
-    margin-right: 15px; /* Відступ між іконками */
-}
-/* =========================================
-   СОЦМЕРЕЖІ У ФУТЕРІ
-   ========================================= */
 .footer__socials {
     display: flex;
     gap: 15px;
-    justify-content: center; /* Центруємо іконки */
+    justify-content: center; 
     margin-top: 30px;
     margin-bottom: 20px;
 }
@@ -671,7 +668,6 @@ img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    /* Наш фірмовий темний колір у спокійному стані */
     background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
     color: #ffffff;
     text-decoration: none;
@@ -680,13 +676,11 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Загальна поведінка при наведенні (підскок) */
 .social-link:hover {
     transform: translateY(-4px);
     color: #ffffff;
 }
 
-/* Фірмові кольори при наведенні */
 .social-link.social-inst:hover {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     box-shadow: 0 6px 15px rgba(220, 39, 67, 0.4);
@@ -701,11 +695,101 @@ img {
     background: #25D366;
     box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
 }
-/*FOOTER END*/
 
-/* --- НОВІ ПРЕМІУМ СТИЛІ ДЛЯ "МЕТОДІВ ЧИСТКИ" --- */
+.footer__social-link img {
+    width: 25px;      
+    margin-right: 15px; 
+}
+/* FOOTER END */
 
-/* Додаємо спеціальний клас, щоб звузити модалку для більшої акуратності */
+/* =========================================
+   МОДАЛЬНІ ВІКНА ТА МЕТОДИ ЧИСТКИ
+   ========================================= */
+.modal {
+    display: none;          
+    position: fixed;        
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(16, 39, 70, 0.8); 
+    z-index: 9999;          
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;          
+}
+
+.modal.active {
+    display: flex !important;
+}
+
+.modal__content {
+    background-color: #fff;
+    padding: 40px 30px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;    
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* Об'єднаний та оптимізований крестик закриття */
+.modal__close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-color: rgba(235, 87, 87, 0.1) !important; 
+    color: #EB5757 !important; 
+    border: none !important;
+    border-radius: 50% !important; 
+    font-size: 24px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    padding: 0 !important;
+    z-index: 10;
+}
+
+.modal__close:hover {
+    background-color: #EB5757 !important; 
+    color: #fff !important; 
+    transform: rotate(90deg) scale(1.1) !important; 
+}
+
+.modal__title {
+    text-align: center;
+    color: #102746; 
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.modal__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.modal__table td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #EAEAEA;
+    font-size: 16px;
+    color: #5E6282;
+}
+
+.modal__table tr:last-child td { border-bottom: none; }
+.modal__table td:first-child { font-weight: 500; color: #181E4B; }
+.modal__table td:last-child { text-align: right; font-weight: 700; color: #1B7DFF; }
+
+/* Методи чистки */
 .modal__content--methods {
     max-width: 600px; 
     text-align: center;
@@ -718,19 +802,18 @@ img {
     margin-top: 20px;
 }
 
-/* Оновлена карточка методу (тепер це красиві блоки з тінями замість ліній) */
 .method-item {
     display: flex;
-    flex-direction: column; /* Елементи стоять один під одним */
-    align-items: center;    /* Відцентровано */
+    flex-direction: column; 
+    align-items: center;    
     text-align: center;     
     background-color: #ffffff;
-    border-radius: 20px;    /* М'які преміальні кути */
+    border-radius: 20px;    
     padding: 25px 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Легка тінь */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
+    gap: 15px; /* Уніфіковано з мобільною версією */
 }
 
-/* Кольорові кружечки-контейнери для іконок */
 .method-icon-container {
     display: flex;
     justify-content: center;
@@ -738,28 +821,21 @@ img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 0; /* Змінено через gap */
 }
 
-.method-icon-container--aqua {
-    background-color: #F0F4FA; /* Ніжно-синій фон */
-}
+.method-icon-container--aqua { background-color: #F0F4FA; }
+.method-icon-container--iron { background-color: #FCF6EE; }
 
-.method-icon-container--iron {
-    background-color: #FCF6EE; /* Ніжно-пісочний фон */
-}
-
-/* Сама SVG картинка (замінює твій старий .method-item img) */
 .method-icon-pro {
-    width: 32px;  /* Маленька, чітка іконка */
+    width: 32px;  
     height: 32px;
     object-fit: contain;
 }
 
-/* Оновлені заголовки та тексти */
 .method-item h3 {
-    margin-bottom: 10px;
-    color: #1B7DFF; /* Робимо заголовок фірмовим синім кольором */
+    margin-bottom: 0; /* Змінено через gap */
+    color: #1B7DFF; 
     font-size: 18px;
     font-weight: 600;
 }
@@ -768,201 +844,11 @@ img {
     font-size: 14px; 
     line-height: 1.6;
     color: #5E6282;
-    max-width: 400px; /* Обмежуємо ширину тексту, щоб він гарно читався і не розповзався */
+    max-width: 400px; 
     margin: 0 auto;
 }
-/* =========================================
-   БАЗОВІ СТИЛІ ДЛЯ ВСІХ МОДАЛЬНИХ ВІКОН
-   (Цей блок ховає вікна і робить їх спливаючими)
-   ========================================= */
-.modal {
 
-    display: none;          /* ЖОРСТКО ХОВАЄМО ВІКНО */
-
-    position: fixed;        /* Фіксуємо поверх екрану */
-
-    top: 0;
-
-    left: 0;
-
-    width: 100vw;
-
-    height: 100vh;
-
-    background-color: rgba(16, 39, 70, 0.8); /* Красивий темно-синій напівпрозорий фон */
-
-    z-index: 9999;          /* Робимо вище за футер, карту і шапку */
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow-y: auto;
-
-    padding: 20px;          /* Щоб вікно не прилипало до країв на телефоні */
-
-}
-
-
-
-/* Клас, який додає JS, щоб показати вікно */
-
-.modal.active {
-
-    display: flex !important;
-
-}
-
-
-
-/* Базовий контейнер для контенту всередині */
-
-.modal__content {
-
-    background-color: #fff;
-
-    padding: 40px 30px;
-
-    max-width: 800px;
-
-    width: 100%;
-
-    position: relative;
-
-    border-radius: 20px;    /* Преміальні закруглення */
-
-    margin: auto;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-
-}
-
-
-
-/* Хрестик закриття */
-
-.modal__close {
-
-    position: absolute;
-
-    top: 15px;
-
-    right: 20px;
-
-    font-size: 30px;
-
-    line-height: 1;
-
-    color: #5E6282;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    z-index: 10;
-
-}
-
-
-
-.modal__close:hover {
-
-    color: #1B7DFF;
-
-}
-/* =========================================
-   СТИЛИ ДЛЯ КОНТЕНТА ВНУТРИ ОКНА ПРАЙСА
-   ========================================= */
-
-/* Заголовок окна */
-.modal__title {
-    text-align: center;
-    color: #102746; /* Темно-синий в тон твоего фона */
-    font-size: 28px;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-/* Таблица с ценами */
-.modal__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-/* Строки таблицы */
-.modal__table td {
-    padding: 16px 10px;
-    border-bottom: 1px solid #EAEAEA;
-    font-size: 16px;
-    color: #5E6282;
-}
-
-/* Убираем полоску у самой последней строки */
-.modal__table tr:last-child td {
-    border-bottom: none; 
-}
-
-/* Левая колонка: Название вещи */
-.modal__table td:first-child {
-    font-weight: 500;
-    color: #181E4B; /* Более темный контрастный цвет текста */
-}
-
-/* Правая колонка: Цена */
-.modal__table td:last-child {
-    text-align: right;
-    font-weight: 700;
-    color: #1B7DFF; /* Яркий синий акцент, как при наведении на крестик */
-}
-
-/* Премиальная кнопка перехода в Телеграм-бот */
-/* Базові налаштування кнопок */
-.btn-order {
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    padding: 18px 20px;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Легкий контур для об'єму */
-}
-
-/* 1. Преміальний синій (для Telegram) */
-.btn-premium-blue {
-    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
-    box-shadow: 0 4px 15px rgba(27, 125, 255, 0.3);
-}
-
-.btn-premium-blue:hover {
-    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
-    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.5);
-    transform: translateY(-2px);
-    color: #fff;
-}
-
-/* 2. Преміальний темний (для Телефону) */
-.btn-premium-dark {
-    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
-    box-shadow: 0 4px 15px rgba(16, 39, 70, 0.3);
-}
-
-.btn-premium-dark:hover {
-    background: linear-gradient(135deg, #060F1C 0%, #102746 100%);
-    box-shadow: 0 6px 20px rgba(16, 39, 70, 0.5);
-    transform: translateY(-2px);
-    color: #fff;
-}
-/* =========================================
-   КНОПКИ В МОДАЛЬНИХ ВІКНАХ
-   ========================================= */
-/* Базові налаштування кнопок */
+/* Кнопки в модалках */
 .btn-order {
     display: block;
     width: 100%;
@@ -978,7 +864,6 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 1. Преміальний синій (для Telegram) */
 .btn-premium-blue {
     background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
     box-shadow: 0 4px 15px rgba(27, 125, 255, 0.3);
@@ -991,7 +876,6 @@ img {
     color: #fff;
 }
 
-/* 2. Преміальний темний (для Телефону) */
 .btn-premium-dark {
     background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
     box-shadow: 0 4px 15px rgba(16, 39, 70, 0.3);
@@ -1005,70 +889,8 @@ img {
 }
 
 /* =========================================
-   ГОЛОВНА КНОПКА "ЗРОБИТИ ЗАМОВЛЕННЯ"
+   ПЛАВАЮЧІ КНОПКИ (SCROLL TO TOP & CALL)
    ========================================= */
-.search__btn {
-    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%) !important;
-    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.3) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    transition: all 0.3s ease !important;
-    color: #fff !important;
-}
-
-.search__btn:hover {
-    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%) !important;
-    box-shadow: 0 8px 25px rgba(27, 125, 255, 0.5) !important;
-    transform: translateY(-2px) !important;
-}
-/* =========================================
-   КНОПКА ЗАКРИТТЯ МОДАЛЬНОГО ВІКНА [X]
-   ========================================= */
-.modal__close {
-    position: absolute !important;
-    top: 15px !important;
-    right: 15px !important;
-    width: 36px !important;
-    height: 36px !important;
-    background-color: rgba(235, 87, 87, 0.1) !important; /* Легкий червоний фон */
-    color: #EB5757 !important; /* Красивий преміальний червоний колір */
-    border: none !important;
-    border-radius: 50% !important; /* Робимо ідеальне коло */
-    font-size: 24px !important;
-    line-height: 1 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    padding: 0 !important;
-}
-
-/* Ефект при наведенні мишки */
-.modal__close:hover {
-    background-color: #EB5757 !important; /* Фон стає насичено червоним */
-    color: #fff !important; /* Сам хрестик стає білим */
-    transform: rotate(90deg) scale(1.1) !important; /* Плавний поворот і легке збільшення */
-}
-
-/* Адаптив для телефонов */
-@media (max-width: 500px) {
-    .modal__title {
-        font-size: 22px;
-    }
-    .modal__table td {
-        font-size: 14px;
-        padding: 12px 5px;
-    }
-}
-/* =========================================
-   КНОПКА ВГОРУ (SCROLL TO TOP)
-   ========================================= */
-/* Плавний скрол для всієї сторінки */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Базовий стан кнопки (схована внизу) */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -1087,30 +909,26 @@ html {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    z-index: 99; /* Завжди поверх інших елементів */
+    z-index: 99; 
 }
 
-/* Клас, який буде додавати JS для показу кнопки */
 .scroll-top-btn.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-/* Ефект при наведенні */
 .scroll-top-btn:hover {
     background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
     box-shadow: 0 6px 20px rgba(27, 125, 255, 0.5);
     transform: translateY(-3px);
     color: #fff;
 }
-/* =========================================
-   КНОПКА ДЗВІНКА (MOBILE ONLY)
-   ========================================= */
+
 .mobile-call-btn {
     position: fixed;
     bottom: 30px;
-    left: 30px; /* Ставимо зліва */
+    left: 30px; 
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
@@ -1128,7 +946,6 @@ html {
     z-index: 99;
 }
 
-/* Показуємо тільки на екранах менше 768px (телефони та планшети) */
 @media (max-width: 767px) {
     .mobile-call-btn.show {
         opacity: 1;
@@ -1137,109 +954,8 @@ html {
     }
 }
 
-/* Приховуємо на комп'ютерах у будь-якому випадку */
 @media (min-width: 768px) {
     .mobile-call-btn {
         display: none;
-    }
-}
-/* =========================================
-   ТЕКСТОВЕ МЕНЮ ЗАМІСТЬ БУРГЕРА
-   ========================================= */
-.header__burger {
-    width: auto !important;
-    height: auto !important;
-    background: transparent !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-    z-index: 100 !important; /* Щоб напис завжди був ПОВЕРХ відкритого меню */
-    cursor: pointer !important;
-}
-
-/* Приховуємо старі смужки від класичного бургера, якщо вони були */
-.header__burger::before,
-.header__burger::after,
-.header__burger > span:not(.burger-text) {
-    display: none !important;
-}
-
-/* Стилізуємо сам текст "PRALNYA VDOMA" */
-.burger-text {
-    display: block !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    color: #fff !important; /* Колір тексту. Якщо фон меню світлий, зміни на #102746 */
-    transition: all 0.3s ease !important;
-}
-
-/* Ефект при наведенні або коли меню відкрите (клас active) */
-.header__burger.active .burger-text {
-    /* Можеш змінити колір, коли меню відкрите, щоб клієнт розумів, що сюди треба натиснути для закриття */
-    color: #1B7DFF !important; 
-    transform: scale(0.95);
-}
-/* =========================================
-   МОБІЛЬНА ШАПКА (ТІЛЬКИ ДЛЯ ТЕЛЕФОНІВ)
-   ========================================= */
-@media (max-width: 767px) {
-    /* 1. Повертаємо синю смужку хедера і фіксуємо її */
-    .header {
-        height: 70px !important; /* Акуратна висота смужки */
-        background: linear-gradient(135deg, #102746 0%, #060F1C 100%) !important; /* Наш преміальний темний фон */
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        z-index: 1000 !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important; /* Тінь під шапкою */
-    }
-
-    /* Ховаємо логотип */
-    .header__logo {
-        display: none !important;
-    }
-
-    /* 2. Вбиваємо старі смужки бургера */
-    .header__burger::before,
-    .header__burger::after,
-    .header__burger span:not(.burger-text) {
-        display: none !important;
-        content: none !important;
-    }
-
-    /* 3. Жорстко центруємо контейнер і забороняємо перенос */
-    /* 3. Жорстко центруємо контейнер по всій ширині екрана */
-    .header__burger {
-        position: absolute !important;
-        left: 0 !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important; /* Тільки вертикальне вирівнювання */
-        width: 100% !important; /* Розтягуємо на весь екран */
-        display: flex !important;
-        justify-content: center !important; /* Текст рівно по горизонталі */
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* 4. Налаштовуємо сам текст */
-    .burger-text {
-        display: inline-block !important;
-        white-space: nowrap !important; /* 100% гарантія, що текст буде в 1 рядок */
-        font-size: 18px !important;
-        line-height: 1 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Ефект при кліку */
-    .header__burger.active {
-        transform: translate(-50%, -50%) scale(0.95) !important;
     }
 }
