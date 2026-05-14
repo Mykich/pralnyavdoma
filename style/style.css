@@ -1104,3 +1104,42 @@ html {
     transform: translateY(-3px);
     color: #fff;
 }
+/* =========================================
+   КНОПКА ДЗВІНКА (MOBILE ONLY)
+   ========================================= */
+.mobile-call-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Ставимо зліва */
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(16, 39, 70, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+/* Показуємо тільки на екранах менше 768px (телефони та планшети) */
+@media (max-width: 767px) {
+    .mobile-call-btn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Приховуємо на комп'ютерах у будь-якому випадку */
+@media (min-width: 768px) {
+    .mobile-call-btn {
+        display: none;
+    }
+}

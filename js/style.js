@@ -97,7 +97,6 @@
     }
 
     // 5. МОДАЛЬНІ ВІКНА (ТІЛЬКИ СПРАВЖНІ ВІКНА)
-    // ДОДАНО: .prices__card-btn для точного перехоплення кліків по нових кнопках прайсу
     const modalLinks = document.querySelectorAll(".places__card-link, .places__view, .js-open-methods, .prices__card-btn");
 
     if (modalLinks) {
@@ -145,16 +144,20 @@
         }
     });
 
-}());
-// Показуємо/ховаємо кнопку "Вгору" при скролі
-const scrollTopBtn = document.querySelector('.js-scroll-top');
+    // 7. ЛОГІКА ПОЯВИ ПЛАВАЮЧИХ КНОПОК ПРИ СКРОЛІ (Вгору + Мобільний дзвінок)
+    const scrollTopBtn = document.querySelector('.js-scroll-top');
+    const mobileCallBtn = document.querySelector('.js-mobile-call');
 
-window.addEventListener('scroll', () => {
-    // Якщо проскролили більше 300 пікселів вниз — показуємо
-    if (window.scrollY > 300) { 
-        scrollTopBtn.classList.add('show');
-    } else {
-        // Якщо повернулися наверх — ховаємо
-        scrollTopBtn.classList.remove('show');
-    }
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { 
+            // Показуємо обидві кнопки, якщо вони існують на сторінці
+            if(scrollTopBtn) scrollTopBtn.classList.add('show');
+            if(mobileCallBtn) mobileCallBtn.classList.add('show');
+        } else {
+            // Ховаємо обидві кнопки
+            if(scrollTopBtn) scrollTopBtn.classList.remove('show');
+            if(mobileCallBtn) mobileCallBtn.classList.remove('show');
+        }
+    });
+
+}());
