@@ -124,9 +124,12 @@ img {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    gap: 85px;
+    gap: 100px;
 }
-
+.header__nav{
+        justify-content: center; 
+        margin: 0 auto;
+}
 .header__link {
     font-size: 18px;
     color: #fff;
@@ -957,5 +960,21 @@ img {
 @media (min-width: 768px) {
     .mobile-call-btn {
         display: none;
+    }
+}
+/* По умолчанию (для мобильных телефонов) элемент виден */
+#burger {
+    display: block; /* или inline-block / flex, в зависимости от того, как выстроен твой header */
+}
+
+/* Медиа-запрос: скрываем элемент, если ширина экрана 768px или больше (планшеты и десктопы) */
+@media (min-width: 768px) {
+    #burger {
+        display: none; 
+    }
+}
+@media (min-width: 768px) {
+    #burger {
+        display: none !important; 
     }
 }
