@@ -407,4 +407,68 @@
         max-width: 290px !important;
         margin: 0 auto;
     }
+        .b2b {
+        padding: 50px 0;
+    }
+
+    .b2b__content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .b2b__info,
+    .b2b__card {
+        padding: 28px 22px;
+        border-radius: 16px;
+        text-align: left;
+    }
+
+    .b2b__title {
+        font-size: 26px;
+    }
+
+    .b2b__btn {
+        width: 100% !important;
+        margin: 20px auto 0 !important;
+    }
+        .how-it-works {
+        padding: 55px 0 80px;
+    }
+
+    .how-it-works__title {
+        font-size: 28px;
+    }
+
+    .how-it-works__steps {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .how-it-works__step {
+        padding: 26px 22px;
+        min-height: auto;
+        text-align: left;
+    }
+        .trust {
+        padding: 55px 0 75px;
+    }
+
+    .trust__title {
+        font-size: 28px;
+    }
+
+    .trust__subtitle {
+        font-size: 15px;
+    }
+
+    .trust__cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .trust__card {
+        min-height: auto;
+        padding: 26px 22px;
+        text-align: left;
+    }
 }

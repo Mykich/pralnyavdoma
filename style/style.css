@@ -206,7 +206,146 @@ img {
     margin-bottom: 60px;
 }
 /* INTRO END */
+/* =========================================
+   HOW IT WORKS START
+   ========================================= */
+.how-it-works {
+    padding: 90px 0 140px;
+    background: #F4F5F7;
+}
 
+.how-it-works__top {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.how-it-works__eyebrow {
+    color: #1B7DFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.how-it-works__title {
+    font-size: 36px;
+    color: #102746;
+    font-weight: 700;
+}
+
+.how-it-works__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.how-it-works__step {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 24px;
+    box-shadow: 0 12px 35px rgba(16, 39, 70, 0.08);
+    min-height: 230px;
+}
+
+.how-it-works__number {
+    display: inline-block;
+    color: #1B7DFF;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.how-it-works__step h3 {
+    color: #102746;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.how-it-works__step p {
+    color: #5E6282;
+    line-height: 1.6;
+}
+/* HOW IT WORKS END */
+/* =========================================
+   TRUST START
+   ========================================= */
+.trust {
+    padding: 90px 0 120px;
+    background: #fff;
+}
+
+.trust__top {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.trust__eyebrow {
+    color: #1B7DFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.trust__title {
+    font-size: 36px;
+    line-height: 1.2;
+    color: #102746;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.trust__subtitle {
+    color: #5E6282;
+    line-height: 1.7;
+}
+
+.trust__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.trust__card {
+    background: #F4F5F7;
+    border-radius: 18px;
+    padding: 30px 24px;
+    min-height: 240px;
+    transition: 0.3s ease;
+}
+
+.trust__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(16, 39, 70, 0.08);
+}
+
+.trust__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.trust__card h3 {
+    color: #102746;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.trust__card p {
+    color: #5E6282;
+    line-height: 1.6;
+}
+/* TRUST END */
 /* =========================================
    BENEFITS START
    ========================================= */
@@ -575,6 +714,85 @@ img {
     box-shadow: 0 5px 15px rgba(27, 125, 255, 0.3);
 }
 /* PRICES END */
+/* B2B START */
+/* =========================================
+   B2B START
+   ========================================= */
+.b2b {
+    padding: 90px 0;
+    background: #F4F5F7;
+}
+
+.b2b__content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.b2b__info,
+.b2b__card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 12px 35px rgba(16, 39, 70, 0.08);
+}
+
+.b2b__eyebrow {
+    color: #1B7DFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.b2b__title {
+    font-size: 34px;
+    line-height: 1.2;
+    color: #102746;
+    margin-bottom: 20px;
+}
+
+.b2b__text,
+.b2b__note {
+    color: #5E6282;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.b2b__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.b2b__list li {
+    color: #102746;
+    padding: 12px 0;
+    border-bottom: 1px solid #EAEAEA;
+    font-weight: 500;
+}
+
+.b2b__card h3 {
+    color: #102746;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.b2b__card ul {
+    color: #5E6282;
+    line-height: 1.7;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.b2b__btn {
+    width: 100%;
+    text-align: center;
+}
+/* B2B END */
+
 
 /* =========================================
    MAP START
