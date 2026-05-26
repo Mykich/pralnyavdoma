@@ -1087,6 +1087,21 @@ img {
     margin: 0 auto;
 }
 
+.method-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 22px rgba(27, 125, 255, 0.25);
+    flex-shrink: 0;
+}
 /* Кнопки в модалках */
 .btn-order {
     display: block;
