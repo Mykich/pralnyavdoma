@@ -73,6 +73,17 @@ img {
     transform: translateY(-2px) !important;
 }
 
+.search__form-fieldset {
+    border: none;
+    padding: 0;
+}
+
+.search__form-info--center {
+    display: flex;
+    justify-content: center;
+    background: none;
+}
+
 .btn-icon {
     margin-left: 15px;
     width: 25px;
@@ -817,6 +828,9 @@ img {
     margin: 0 !important;
     vertical-align: bottom; 
 }
+.map__iframe {
+    border: 0;
+}
 /* MAP END */
 
 /* =========================================
@@ -881,7 +895,11 @@ img {
     margin-top: 30px;
     margin-bottom: 20px;
 }
-
+.footer__socials--compact {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}                   
 .social-link {
     display: flex;
     align-items: center;
@@ -1108,7 +1126,129 @@ img {
     transform: translateY(-2px);
     color: #fff;
 }
+/* =========================================
+   MODAL CONTENT HELPERS
+   ========================================= */
+.modal__content--wide {
+    max-width: 900px;
+}
 
+.modal__content--medium {
+    max-width: 720px;
+}
+
+.modal__content--small {
+    max-width: 620px;
+}
+
+.modal__lead {
+    color: #5E6282;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.modal__lead--center {
+    text-align: center;
+}
+
+.modal__info-box {
+    background: #F4F5F7;
+    padding: 22px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.modal__info-title {
+    color: #102746;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.modal__list {
+    list-style: disc;
+    padding-left: 20px;
+    color: #5E6282;
+    line-height: 1.7;
+}
+
+.modal__services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.modal__services-title {
+    color: #1B7DFF;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.modal__cta {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.modal__cta-text {
+    margin-bottom: 15px;
+    color: #5E6282;
+}
+
+.modal__small-note {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.contact-method {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.contact-method:hover {
+    border-color: #1B7DFF;
+    box-shadow: 0 8px 24px rgba(27, 125, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.contact-method img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.contact-method strong {
+    color: #102746;
+    display: block;
+}
+
+.contact-method span {
+    color: #5E6282;
+    font-size: 14px;
+}
+
+.contact-method span.contact-method__accent {
+    color: #1B7DFF;
+}
+
+.tailoring-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.order-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 /* =========================================
    ПЛАВАЮЧІ КНОПКИ (SCROLL TO TOP & CALL)
    ========================================= */
@@ -1165,6 +1305,9 @@ img {
     transform: translateY(20px);
     transition: all 0.3s ease;
     z-index: 99;
+}
+.modal__lead--spaced {
+    margin-bottom: 30px;
 }
 
 @media (max-width: 767px) {

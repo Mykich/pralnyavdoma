@@ -471,4 +471,26 @@
         padding: 26px 22px;
         text-align: left;
     }
+        .modal__services-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .modal__content--wide,
+    .modal__content--medium,
+    .modal__content--small {
+        max-width: 100%;
+    }
+
+    .modal__lead {
+        font-size: 15px;
+    }
+
+    .modal__info-box {
+        padding: 20px;
+    }
+
+    .contact-method {
+        align-items: flex-start;
+    }
 }

@@ -143,6 +143,22 @@
             }
         }
     });
+    
+    // Закриття модального вікна клавішею Esc
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        const activeModal = document.querySelector(".modal.active");
+
+        if (activeModal) {
+            activeModal.classList.remove("active");
+            activeModal.style.display = "none";
+
+            if (!menu || !menu.classList.contains("active")) {
+                document.body.style.overflow = "visible";
+            }
+        }
+    }
+});
 
     // 7. ЛОГІКА ПОЯВИ ПЛАВАЮЧИХ КНОПОК ПРИ СКРОЛІ (Вгору + Мобільний дзвінок)
     const scrollTopBtn = document.querySelector('.js-scroll-top');
