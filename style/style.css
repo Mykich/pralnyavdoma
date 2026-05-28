@@ -964,7 +964,7 @@ img {
 }
 
 .modal__content {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 40px 30px;
     max-width: 800px;
     width: 100%;
@@ -1107,7 +1107,8 @@ img {
     display: block;
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: #fff !important;
+    background: linear-gradient(135deg, #1B7DFF 0%, #0C51AB 100%);
     padding: 18px 20px;
     text-decoration: none;
     border-radius: 12px;
@@ -1115,7 +1116,15 @@ img {
     font-size: 16px;
     transition: all 0.3s ease;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
+    box-shadow: 0 6px 20px rgba(27, 125, 255, 0.25);
+    margin-top: 30px;
+}
+
+.btn-order:hover {
+    background: linear-gradient(135deg, #0C51AB 0%, #1B7DFF 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 125, 255, 0.4);
 }
 
 .btn-premium-blue {
