@@ -886,7 +886,9 @@ img {
     text-decoration: none;
     margin-bottom: 10px;
     display: block;
+    transition: color 0.3s ease, opacity 0.3s ease !important; /* Плавная анимация */
 }
+
 .footer__menu-link:hover {
     color: #d4e0f0 !important;
 }
