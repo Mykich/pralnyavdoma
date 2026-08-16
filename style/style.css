@@ -920,6 +920,17 @@ img {
     color: #ffffff;
 }
 
+.social-link.social-link--soon {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.social-link.social-link--soon:hover {
+    transform: none;
+    background: linear-gradient(135deg, #102746 0%, #060F1C 100%);
+    box-shadow: none;
+}
+
 .social-link.social-inst:hover {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     box-shadow: 0 6px 15px rgba(220, 39, 67, 0.4);
