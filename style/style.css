@@ -887,6 +887,9 @@ img {
     margin-bottom: 10px;
     display: block;
 }
+.footer__menu-link:hover {
+    color: #d4e0f0 !important;
+}
 
 .footer__socials {
     display: flex;
