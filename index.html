@@ -306,38 +306,19 @@
 <div class="prices__cards" id="prices">
     <div class="prices__card">
         <h3 class="prices__card-title">Прання</h3>
-        <ul class="prices__list">
-            <li>Сорочка — від 250 ₴</li>
-            <li>Футболка — від 180 ₴</li>
-            <li>Майка — від 170 ₴</li>
-            <li>Штани — від 250 ₴</li>
-            <li>Джинси — від 280 ₴</li>
-            <li>Худі / світшот — від 350 ₴</li>
-        </ul>
+        <ul class="prices__list" data-price-ids="3,1,8,7,6,10"><li>Сорочка — 250 ₴</li><li>Футболка — 200 ₴</li><li>Брюки — 280 ₴</li><li>Джинси — 280 ₴</li><li>Худі — 320 ₴</li><li>Сукня — 400 ₴</li></ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-washing">ПОВНИЙ ПРАЙС</a>
     </div>
 
     <div class="prices__card prices__card-popular">
         <h3 class="prices__card-title">Верхній одяг</h3>
-        <ul class="prices__list">
-            <li>Куртка демісезонна — від 850 ₴</li>
-            <li>Пуховик короткий — від 1200 ₴</li>
-            <li>Пуховик довгий — від 1450 ₴</li>
-            <li>Пальто текстильне — від 950 ₴</li>
-            <li>Плащ / тренч — від 1000 ₴</li>
-        </ul>
+        <ul class="prices__list" data-price-ids="102,104,105,103,107"><li>Куртка демісезонна — 550 ₴</li><li>Пуховик короткий — 850 ₴</li><li>Пуховик довгий — 990 ₴</li><li>Пальто текстильне — 1000 ₴</li><li>Плащ / Тренч — 650 ₴</li></ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-outerwear">ПОВНИЙ ПРАЙС</a>
     </div>
 
     <div class="prices__card">
         <h3 class="prices__card-title">Ательє</h3>
-        <ul class="prices__list">
-            <li>Підшити штани — від 300 ₴</li>
-            <li>Вкоротити рукави — від 350 ₴</li>
-            <li>Заміна блискавки — від 400 ₴</li>
-            <li>Ремонт шва — від 250 ₴</li>
-            <li>Дрібний ремонт — від 200 ₴</li>
-        </ul>
+        <ul class="prices__list" data-price-ids="601,605,603,602,607"><li>Підшити штани — 450 ₴</li><li>Вкоротити рукави сорочки — 450 ₴</li><li>Заміна блискавки: штани / спідниця — 550 ₴</li><li>Ремонт шва — 280 ₴</li><li>Дрібний ремонт одягу — 250 ₴</li></ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-atelier">ПОВНИЙ ПРАЙС</a>
     </div>
 </div>
@@ -354,12 +335,7 @@
                     Підходить для однотипних речей одного кольору, тканини або призначення.
                 </p>
 
-                <ul class="b2b__list">
-                    <li>Прання однотипного текстилю — від 90 ₴ / кг</li>
-                    <li>Прання + сушіння — від 110 ₴ / кг</li>
-                    <li>Прання + прасування — від 150 ₴ / кг</li>
-                    <li>Мінімальне B2B-замовлення — від 10 кг або від 1000 ₴</li>
-                </ul>
+                <ul class="b2b__list" data-price-b2b><li>Прання однотипного текстилю — від 90 ₴ / кг</li><li>Прання + сушіння — від 110 ₴ / кг</li><li>Прання + прасування — від 150 ₴ / кг</li><li>Мінімальне B2B-замовлення — 10 кг або 1000 ₴</li></ul>
 
                 <p class="b2b__note">
                     Змішані речі рахуються за роздрібним прайсом. Остаточні умови погоджуються після оцінки обсягу та регулярності замовлень.
@@ -652,25 +628,15 @@
 <div class="modal" id="modal-price-washing">
     <div class="modal__content">
         <button class="modal__close" aria-label="Закрити вікно">&times;</button>
-        <h2 class="modal__title">Прайс: Прання</h2>
+        <h2 class="modal__title">Прайс: Прання та текстиль</h2>
 
         <table class="modal__table">
-            <tr><td>Сорочка</td><td>250 ₴</td></tr>
-            <tr><td>Футболка</td><td>180 ₴</td></tr>
-            <tr><td>Майка</td><td>170 ₴</td></tr>
-            <tr><td>Блуза</td><td>240 ₴</td></tr>
-            <tr><td>Спідниця</td><td>240 ₴</td></tr>
-            <tr><td>Штани</td><td>250 ₴</td></tr>
-            <tr><td>Джинси</td><td>280 ₴</td></tr>
-            <tr><td>Шорти</td><td>180 ₴</td></tr>
-            <tr><td>Худі / світшот</td><td>350 ₴</td></tr>
-            <tr><td>Светр</td><td>320 ₴</td></tr>
-            <tr><td>Кофта</td><td>350 ₴</td></tr>
+            <tbody data-price-sections="clothing,textile,ironing,extra"><tr><td>Футболка</td><td>200 ₴</td></tr><tr><td>Майка</td><td>180 ₴</td></tr><tr><td>Сорочка</td><td>250 ₴</td></tr><tr><td>Блуза</td><td>240 ₴</td></tr><tr><td>Светр</td><td>300 ₴</td></tr><tr><td>Худі</td><td>320 ₴</td></tr><tr><td>Джинси</td><td>280 ₴</td></tr><tr><td>Брюки</td><td>280 ₴</td></tr><tr><td>Спідниця</td><td>240 ₴</td></tr><tr><td>Сукня</td><td>400 ₴</td></tr><tr><td>Шорти</td><td>180 ₴</td></tr><tr><td>Світшот</td><td>320 ₴</td></tr><tr><td>Кофта</td><td>300 ₴</td></tr><tr><td colspan="2" class="modal__table-group">Домашній текстиль</td></tr><tr><td>Комплект постелі</td><td>450 ₴</td></tr><tr><td>Плед</td><td>550 ₴</td></tr><tr><td>Ковдра</td><td>600 ₴</td></tr><tr><td>Подушка</td><td>320 ₴</td></tr><tr><td>Ковдра пухова</td><td>1250 ₴</td></tr><tr><td>Подушка велика (50х60–70х70)</td><td>450 ₴</td></tr><tr><td>М'яка іграшка</td><td>350 ₴</td></tr><tr><td>Покривало</td><td>750 ₴</td></tr><tr><td>Тюль / органза</td><td>180 ₴ / м²</td></tr><tr><td>Штори прості</td><td>260 ₴ / м²</td></tr><tr><td>Штори щільні / на підкладці</td><td>320 ₴ / м²</td></tr><tr><td>Рушник малий</td><td>60 ₴</td></tr><tr><td>Халат</td><td>350 ₴</td></tr><tr><td>Наматрацник</td><td>800 ₴</td></tr><tr><td>Рушник великий</td><td>100 ₴</td></tr><tr><td colspan="2" class="modal__table-group">Прасування без прання</td></tr><tr><td>Футболка</td><td>90 ₴</td></tr><tr><td>Сорочка</td><td>130 ₴</td></tr><tr><td>Джинси</td><td>100 ₴</td></tr><tr><td>Брюки зі стрілками</td><td>180 ₴</td></tr><tr><td>Спідниця коротка</td><td>100 ₴</td></tr><tr><td>Спідниця довга</td><td>150 ₴</td></tr><tr><td>Сукня</td><td>250 ₴</td></tr><tr><td>Блуза</td><td>180 ₴</td></tr><tr><td>Кофта / Светр</td><td>200 ₴</td></tr><tr><td>Краватка</td><td>100 ₴</td></tr><tr><td>Комплект постільної білизни</td><td>200 ₴</td></tr><tr><td>Піджак</td><td>180 ₴</td></tr><tr><td>Пальто</td><td>320 ₴</td></tr><tr><td>Куртка</td><td>320 ₴</td></tr><tr><td colspan="2" class="modal__table-group">Додаткові послуги</td></tr><tr><td>Виведення плями</td><td>80 ₴</td></tr><tr><td>Чистка катишків</td><td>100 ₴</td></tr><tr><td>Кондиціонування</td><td>30 ₴</td></tr><tr><td>Відбілювання</td><td>40 ₴</td></tr><tr><td>Накрохмалювання білизни</td><td>200 ₴</td></tr></tbody>
         </table>
 
         <p class="modal__note">
-            Ціни вказані орієнтовно. Остаточна вартість залежить від матеріалу,
-            стану речі, плям, декору та складності обробки.
+            Ціни вказані за стандартний виріб. Остаточна вартість залежить від матеріалу,
+            розміру, стану речі, плям, декору та складності обробки.
             Перед початком роботи ми погоджуємо вартість із клієнтом.
         </p>
 
@@ -687,20 +653,12 @@
         <h2 class="modal__title">Прайс: Верхній одяг</h2>
 
         <table class="modal__table">
-            <tr><td>Вітровка</td><td>650 ₴</td></tr>
-            <tr><td>Куртка демісезонна</td><td>850 ₴</td></tr>
-            <tr><td>Куртка джинсова</td><td>780 ₴</td></tr>
-            <tr><td>Піджак</td><td>750 ₴</td></tr>
-            <tr><td>Пуховик короткий</td><td>1200 ₴</td></tr>
-            <tr><td>Пуховик довгий</td><td>1450 ₴</td></tr>
-            <tr><td>Пальто текстильне</td><td>950 ₴</td></tr>
-            <tr><td>Плащ / тренч</td><td>1000 ₴</td></tr>
-            <tr><td>Жилет</td><td>750 ₴</td></tr>
+            <tbody data-price-sections="outerwear,aquaclean,shoes,accessories"><tr><td>Вітровка</td><td>480 ₴</td></tr><tr><td>Куртка демісезонна</td><td>550 ₴</td></tr><tr><td>Пальто текстильне</td><td>1000 ₴</td></tr><tr><td>Пуховик короткий</td><td>850 ₴</td></tr><tr><td>Пуховик довгий</td><td>990 ₴</td></tr><tr><td>Куртка джинсова</td><td>480 ₴</td></tr><tr><td>Плащ / Тренч</td><td>650 ₴</td></tr><tr><td>Жилет</td><td>400 ₴</td></tr><tr><td>Піджак</td><td>650 ₴</td></tr><tr><td colspan="2" class="modal__table-group">Аквачистка (преміум)</td></tr><tr><td>Весільна сукня</td><td>3000 ₴</td></tr><tr><td>Кашемір</td><td>650 ₴</td></tr><tr><td colspan="2" class="modal__table-group">Взуття</td></tr><tr><td>Кросівки</td><td>550 ₴ / пара</td></tr><tr><td>Черевики</td><td>700 ₴ / пара</td></tr><tr><td colspan="2" class="modal__table-group">Аксесуари</td></tr><tr><td>Рюкзак</td><td>550 ₴</td></tr><tr><td>Сумка</td><td>650 ₴</td></tr><tr><td>Краватка</td><td>150 ₴</td></tr><tr><td>Шарф / Хустка</td><td>300 ₴</td></tr></tbody>
         </table>
 
         <p class="modal__note">
             Шкіра, замша, хутро та речі зі складним декором приймаються тільки після огляду.
-            Ціни вказані орієнтовно. Перед початком роботи ми погоджуємо вартість із клієнтом.
+            Ціни вказані за стандартний виріб. Перед початком роботи ми погоджуємо вартість із клієнтом.
         </p>
 
         <a href="https://t.me/CleanHomeKyivBot?start=order" target="_blank" class="btn-order">
@@ -716,16 +674,12 @@
         <h2 class="modal__title">Прайс: Ательє</h2>
 
         <table class="modal__table">
-            <tr><td>Підшити штани</td><td>300 ₴</td></tr>
-            <tr><td>Вкоротити рукави</td><td>350 ₴</td></tr>
-            <tr><td>Укоротити сукню / спідницю</td><td>450 ₴</td></tr>
-            <tr><td>Заміна блискавки</td><td>400 ₴</td></tr>
-            <tr><td>Ремонт шва</td><td>250 ₴</td></tr>
-            <tr><td>Ремонт кишень</td><td>300 ₴</td></tr>
-            <tr><td>Дрібний ремонт одягу</td><td>200 ₴</td></tr>
+            <tbody data-price-sections="atelier"><tr><td>Підшити штани</td><td>450 ₴</td></tr><tr><td>Ремонт шва</td><td>280 ₴</td></tr><tr><td>Заміна блискавки: штани / спідниця</td><td>550 ₴</td></tr><tr><td>Укоротити сукню / спідницю</td><td>550 ₴</td></tr><tr><td>Вкоротити рукави сорочки</td><td>450 ₴</td></tr><tr><td>Ремонт кишень</td><td>450 ₴</td></tr><tr><td>Дрібний ремонт одягу</td><td>250 ₴</td></tr><tr><td>Підшити джинси зі збереженням фабричного шву</td><td>600 ₴</td></tr><tr><td>Вкоротити рукави піджака / пальто / куртки</td><td>900 ₴</td></tr><tr><td>Заміна блискавки: куртка / вітровка</td><td>900 ₴</td></tr><tr><td>Заміна блискавки: пуховик / пальто</td><td>1200 ₴</td></tr><tr><td>Пришити ґудзик</td><td>80 ₴</td></tr></tbody>
+            <tbody>
             <tr><td>Підгонка по фігурі</td><td>після огляду</td></tr>
             <tr><td>Заміна підкладки</td><td>після огляду</td></tr>
             <tr><td>Реставрація одягу</td><td>після огляду</td></tr>
+        </tbody>
         </table>
 
         <p class="modal__note">
@@ -791,7 +745,7 @@
         </div>
 
         <p class="modal__lead">
-            Орієнтир вартості: <strong>від 650 ₴</strong>.
+            Орієнтир вартості: <strong>від 480 ₴</strong>.
             Верхній одяг, пуховики та речі зі складними матеріалами оцінюються індивідуально після огляду.
         </p>
 
@@ -828,7 +782,7 @@
         </div>
 
         <p class="modal__lead">
-            Базові роботи: <strong>від 200–300 ₴</strong>.
+            Базові роботи: <strong>від 250 ₴</strong>.
             Складні роботи, підгонка по фігурі, підкладка та реставрація оцінюються після огляду.
         </p>
 
@@ -878,5 +832,6 @@
     </div>
 </div>
 <script src="./js/style.js"></script>
+<script src="./js/prices.js?v=2026-11-25"></script>
 </body>
 </html>
