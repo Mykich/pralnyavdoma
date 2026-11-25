@@ -27,7 +27,7 @@ def fmt(item):
 def render_ids(data, ids):
     by_id = {i["id"]: i for i in data["items"]}
     return "".join(
-        f"<li>{html.escape(by_id[int(i)]['name'], quote=False)} — {fmt(by_id[int(i)])}</li>"
+        f'<li><span>{html.escape(by_id[int(i)]["name"], quote=False)}</span><span class="price">{fmt(by_id[int(i)])}</span></li>'
         for i in ids.split(",") if int(i) in by_id
     )
 
@@ -52,6 +52,26 @@ def render_b2b(data):
     return rows + f"<li>Мінімальне B2B-замовлення — {b2b['min_kg']} кг або {b2b['min_amount']} ₴</li>"
 
 
+def render_delivery(data):
+    out = []
+    for z in data["delivery"]["zones"]:
+        if z["price"]:
+            cost = f"<strong>{z['price']} ₴</strong>" + (f"<small>безкоштовно від {z['free_from']} ₴</small>" if z.get("free_from") else "")
+        else:
+            cost = "<strong>Безкоштовно</strong>"
+        out.append(f"<tr><td>{html.escape(z['name'], quote=False)}</td><td>{cost}</td></tr>")
+    return "".join(out)
+
+
+def render_club(data):
+    return "".join(f"<li><strong>{c['discount']}%</strong> від {c['from']} ₴</li>" for c in data["club"])
+
+
+def render_inspection(data):
+    t = ", ".join(data["inspection_only"])
+    return t[:1].upper() + t[1:] + "."
+
+
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_JSON
     with open(path, encoding="utf-8") as f:
@@ -68,6 +88,21 @@ def main():
     text = re.sub(
         r'(<ul class="b2b__list" data-price-b2b>)(.*?)(</ul>)',
         lambda m: m.group(1) + render_b2b(data) + m.group(3), text, flags=re.S)
+
+    d = data.get("delivery")
+    if d:
+        text = re.sub(r'(<tbody data-delivery>)(.*?)(</tbody>)',
+                      lambda m: m.group(1) + render_delivery(data) + m.group(3), text, flags=re.S)
+        text = re.sub(r'(<span data-delivery-min>)(.*?)(</span>)',
+                      lambda m: m.group(1) + str(d["min_order_outside"]) + m.group(3), text)
+        text = re.sub(r'(<(span|strong) data-turnaround>)(.*?)(</\2>)',
+                      lambda m: m.group(1) + html.escape(d["turnaround"], quote=False) + m.group(4), text)
+    if data.get("club"):
+        text = re.sub(r'(<ul class="club__list" data-club>)(.*?)(</ul>)',
+                      lambda m: m.group(1) + render_club(data) + m.group(3), text, flags=re.S)
+    if data.get("inspection_only"):
+        text = re.sub(r'(<p data-inspection>)(.*?)(</p>)',
+                      lambda m: m.group(1) + html.escape(render_inspection(data), quote=False) + m.group(3), text, flags=re.S)
 
     with open(INDEX, "w", encoding="utf-8") as f:
         f.write(text)

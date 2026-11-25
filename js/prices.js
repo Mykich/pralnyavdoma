@@ -20,7 +20,7 @@
         document.querySelectorAll('[data-price-ids]').forEach(function (ul) {
             var html = ul.getAttribute('data-price-ids').split(',').map(function (id) {
                 var i = byId[Number(id)];
-                return i ? '<li>' + esc(i.name) + ' — ' + fmt(i) + '</li>' : '';
+                return i ? '<li><span>' + esc(i.name) + '</span><span class="price">' + fmt(i) + '</span></li>' : '';
             }).join('');
             if (html) ul.innerHTML = html;
         });
@@ -46,6 +46,28 @@
             }).join('');
             rows += '<li>Мінімальне B2B-замовлення — ' + data.b2b.min_kg + ' кг або ' + data.b2b.min_amount + ' ₴</li>';
             b2b.innerHTML = rows;
+        }
+
+        var d = data.delivery;
+        if (d) {
+            var tb = document.querySelector('[data-delivery]');
+            if (tb && d.zones) tb.innerHTML = d.zones.map(function (z) {
+                var cost = z.price ? '<strong>' + z.price + ' ₴</strong>' + (z.free_from ? '<small>безкоштовно від ' + z.free_from + ' ₴</small>' : '') : '<strong>Безкоштовно</strong>';
+                return '<tr><td>' + esc(z.name) + '</td><td>' + cost + '</td></tr>';
+            }).join('');
+            if (d.min_order_outside) document.querySelectorAll('[data-delivery-min]').forEach(function (el) { el.textContent = d.min_order_outside; });
+            if (d.turnaround) document.querySelectorAll('[data-turnaround]').forEach(function (el) { el.textContent = d.turnaround; });
+        }
+
+        var club = document.querySelector('[data-club]');
+        if (club && data.club) club.innerHTML = data.club.map(function (c) {
+            return '<li><strong>' + c.discount + '%</strong> від ' + c.from + ' ₴</li>';
+        }).join('');
+
+        var insp = document.querySelector('[data-inspection]');
+        if (insp && data.inspection_only && data.inspection_only.length) {
+            var t = data.inspection_only.join(', ');
+            insp.textContent = t.charAt(0).toUpperCase() + t.slice(1) + '.';
         }
     }
 
