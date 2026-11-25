@@ -6,13 +6,15 @@
     <meta name="description" content="Пральня та ательє у Києві. Прання, аквачистка, догляд за верхнім одягом, домашній текстиль, ательє та забір речей з квартири.">
     <meta property="og:title" content="Pralnya Vdoma — пральня та ательє у Києві">
     <meta property="og:description" content="Прання, аквачистка, ательє, догляд за верхнім одягом та забір речей з квартири у Києві.">
-    <meta property="og:image" content="./img/jpg/intro.jpg">
+    <meta property="og:image" content="https://mykich.github.io/pralnyavdoma/img/jpg/intro.jpg">
+    <meta property="og:url" content="https://mykich.github.io/pralnyavdoma/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pralnya Vdoma — пральня та ательє у Києві">
     <meta name="twitter:description" content="Прання, аквачистка, ательє та забір речей з квартири у Києві.">
-    <meta name="twitter:image" content="./img/jpg/intro.jpg">
+    <meta name="twitter:image" content="https://mykich.github.io/pralnyavdoma/img/jpg/intro.jpg">
+    <link rel="canonical" href="https://mykich.github.io/pralnyavdoma/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -25,6 +27,31 @@
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./img/favicon/site.webmanifest" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DryCleaningOrLaundry",
+      "name": "Pralnya Vdoma",
+      "description": "Пральня та ательє у Києві: прання, аквачистка, верхній одяг, домашній текстиль, ательє, забір речей з квартири.",
+      "url": "https://mykich.github.io/pralnyavdoma/",
+      "image": "https://mykich.github.io/pralnyavdoma/img/jpg/intro.jpg",
+      "telephone": "+380935771190",
+      "priceRange": "₴₴",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "вул. Бульварно-Кудрявська, 17А",
+        "addressLocality": "Київ",
+        "addressCountry": "UA"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }],
+      "sameAs": ["https://t.me/CleanHomeKyivBot"]
+    }
+    </script>
 </head>
 <body>
     <!--header start-->
@@ -280,11 +307,12 @@
     <div class="prices__card">
         <h3 class="prices__card-title">Прання</h3>
         <ul class="prices__list">
-            <li>Сорочка — 250 ₴</li>
-            <li>Футболка / майка — 170 ₴</li>
-            <li>Штани — 250 ₴</li>
-            <li>Джинси — 280 ₴</li>
-            <li>Худі / світшот — 350 ₴</li>
+            <li>Сорочка — від 250 ₴</li>
+            <li>Футболка — від 180 ₴</li>
+            <li>Майка — від 170 ₴</li>
+            <li>Штани — від 250 ₴</li>
+            <li>Джинси — від 280 ₴</li>
+            <li>Худі / світшот — від 350 ₴</li>
         </ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-washing">ПОВНИЙ ПРАЙС</a>
     </div>
@@ -292,11 +320,11 @@
     <div class="prices__card prices__card-popular">
         <h3 class="prices__card-title">Верхній одяг</h3>
         <ul class="prices__list">
-            <li>Куртка демісезонна — 850 ₴</li>
-            <li>Пуховик короткий — 1200 ₴</li>
-            <li>Пуховик довгий — 1450 ₴</li>
-            <li>Пальто текстильне — 950 ₴</li>
-            <li>Плащ / тренч — 1000 ₴</li>
+            <li>Куртка демісезонна — від 850 ₴</li>
+            <li>Пуховик короткий — від 1200 ₴</li>
+            <li>Пуховик довгий — від 1450 ₴</li>
+            <li>Пальто текстильне — від 950 ₴</li>
+            <li>Плащ / тренч — від 1000 ₴</li>
         </ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-outerwear">ПОВНИЙ ПРАЙС</a>
     </div>
@@ -304,11 +332,11 @@
     <div class="prices__card">
         <h3 class="prices__card-title">Ательє</h3>
         <ul class="prices__list">
-            <li>Підшити штани — 300 ₴</li>
-            <li>Вкоротити рукави — 350 ₴</li>
-            <li>Заміна блискавки — 400 ₴</li>
-            <li>Ремонт шва — 250 ₴</li>
-            <li>Дрібний ремонт — 200 ₴</li>
+            <li>Підшити штани — від 300 ₴</li>
+            <li>Вкоротити рукави — від 350 ₴</li>
+            <li>Заміна блискавки — від 400 ₴</li>
+            <li>Ремонт шва — від 250 ₴</li>
+            <li>Дрібний ремонт — від 200 ₴</li>
         </ul>
         <a href="#!" class="prices__card-btn places__card-link" data-modal="modal-price-atelier">ПОВНИЙ ПРАЙС</a>
     </div>
@@ -735,7 +763,7 @@
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.81 12.81 0 0 0 .63 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.63A2 2 0 0 1 22 16.92z"></path>
     </svg>
 </a>
-     <a href="#services" class="scroll-top-btn js-scroll-top">
+     <a href="#" class="scroll-top-btn js-scroll-top" aria-label="Нагору">
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="19" x2="12" y2="5"></line>
         <polyline points="5 12 12 5 19 12"></polyline>
