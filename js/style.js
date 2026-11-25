@@ -164,6 +164,14 @@ document.addEventListener("keydown", (e) => {
     const scrollTopBtn = document.querySelector('.js-scroll-top');
     const mobileCallBtn = document.querySelector('.js-mobile-call');
 
+    // Кнопка «Нагору» веде на початок сторінки (раніше посилання вело на #services)
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) { 
             // Показуємо обидві кнопки, якщо вони існують на сторінці

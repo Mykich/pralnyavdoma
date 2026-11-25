@@ -1187,6 +1187,18 @@ img {
     margin-bottom: 25px;
 }
 
+.modal__note {
+    margin: 20px 0 25px;
+    padding: 14px 18px;
+    background: #F5F8FF;
+    border-left: 3px solid #1B7DFF;
+    border-radius: 8px;
+    color: #5E6282;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
 .modal__lead--center {
     text-align: center;
 }
