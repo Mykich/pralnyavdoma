@@ -218,7 +218,8 @@ button { font: inherit; color: inherit; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--gold); transition: transform .2s; }
 .faq details[open] summary::after { transform: rotate(45deg); }
-.faq details p { color: var(--muted); padding-bottom: 22px; margin: 0; max-width: 680px; }
+.faq details p { color: var(--muted); padding-bottom: 12px; margin: 0; max-width: 680px; }
+.faq details p:last-child { padding-bottom: 22px; }
 
 /* ---------- Контакти ---------- */
 .contacts { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
